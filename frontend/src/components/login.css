@@ -1,0 +1,25 @@
+.login_main_div{
+    margin: auto;
+    margin-top: 30px;
+    padding:50px;
+    padding-bottom: 80px;
+    background-color: aquamarine;
+    width: 600px;
+    border-radius: 10px;
+}
+
+.warn{
+    color: red;
+    margin-top: 20px;
+}
+
+label
+{
+    float:left
+}
+
+.button{
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
