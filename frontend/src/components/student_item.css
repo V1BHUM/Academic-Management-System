@@ -1,14 +1,23 @@
+.sitem:hover{
+    width: 83%;
+    padding: 8px;
+    background-color: rgb(244, 252, 252);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+}
+
 .sitem{
     display: flex;
     align-items: center;
-    border: 1px solid black ;
+    box-shadow: 5px 5px 6px rgba(0,0,0,0.4);
     justify-content: center;
     width: 80%;
     margin: auto;
-    padding: 0 0px 0 10px;
+    padding: 5px;
     margin-top: 10px;
-    
+    background-color: azure;
+    border-left: 10px solid rgb(58, 146, 247);
     overflow-x: auto;
+    transition: 0.3s;
 }
 
 .sitem .button{
@@ -17,4 +26,6 @@
 .sitem h4{
     margin-right: 30px;
     flex:1;
+    font-family: sans-serif;
+    margin-top: 5px;
 }
