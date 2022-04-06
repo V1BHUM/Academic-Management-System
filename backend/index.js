@@ -27,10 +27,37 @@ app.listen(PORT,() => {
 })
 
 app.post("/login/student",(req,res) =>{
-    connection.execute("SELECT * from Student where student_id = ?",[req.body.username],(err,results,fields) => {
+    connection.execute("SELECT * from student where student_id = ?",[req.body.username],(err,results,fields) => {
         if(err) console.log(err);
         res.json(results);
     });
 });
 
+app.post("/login/admin",(req,res) =>{
+    connection.execute("SELECT * from admin where username = ?",[req.body.username],(err,results,fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/login/professor",(req,res) =>{
+    connection.execute("SELECT * from professor where professor_id = ?",[req.body.username],(err,results,fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.get("/student/all",(req,res) => {
+    connection.execute("SELECT * from student",(err,results,fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+})
+
+app.post("/student/delete",(req,res) =>{
+    connection.execute("DELETE from student where student_id=?",[req.body.student_id],(err,results,fields) => {
+        if(err) console.log(err);
+        res.json({abc:""});
+    });
+});
 
