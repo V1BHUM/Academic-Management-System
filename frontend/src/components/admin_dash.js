@@ -28,9 +28,10 @@ const Admin_Dash = () => {
                 setInd(e.target.innerHTML);
                 sessionStorage.setItem("index",e.target.innerHTML);
             }}>
-                <li>View Students</li>
+                <li style = {{borderRight:(ind == "View Students")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Students</li>
                 <li>One </li>
                 <li>Three</li>
+                <li style = {{borderRight:(ind == "Delete Students")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Delete Students</li>
             </ul>
         </div>
         <div className="content">
