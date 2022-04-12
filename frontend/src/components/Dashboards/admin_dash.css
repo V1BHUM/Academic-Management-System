@@ -50,7 +50,7 @@
     background:transparent;
     border: none;
     border-radius: 20px;
-    background-image: url("../../public/menu.png");
+    background-image: url("../../../public/menu.png");
     background-position: center;
     background-size: contain;
     height: 40px;
@@ -64,7 +64,7 @@
 
 .navbar li:hover{
     background-color: rgba(0,0,0,0.1);
-    
+    transition: 0.5s;
 }
 
 .navbar li{

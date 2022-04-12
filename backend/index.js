@@ -52,7 +52,7 @@ app.get("/student/all",(req,res) => {
         if(err) console.log(err);
         res.json(results);
     });
-})
+});
 
 app.post("/student/delete",(req,res) =>{
     connection.execute("DELETE from student where student_id=?",[req.body.student_id],(err,results,fields) => {
@@ -61,3 +61,23 @@ app.post("/student/delete",(req,res) =>{
     });
 });
 
+app.get("/course/all", (req,res) => {
+    connection.execute("SELECT * FROM COURSE", (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.get("/professor/all", (req, res) => {
+    connection.execute("SELECT * FROM PROFESSOR", (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/student/add", (req, res) => {
+    connection.execute("INSERT INTO STUDENT VALUES(?, ?, ?, ?)", [req.body.student_id, req.body.first_name, req.body.last_name, req.body.password], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});

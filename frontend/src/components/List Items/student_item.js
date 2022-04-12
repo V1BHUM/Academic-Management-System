@@ -8,7 +8,7 @@ const StudentItem = (props) => {
     const delStudent = function(){
         axios.post("http://localhost:3010/student/delete",{student_id:props.user.student_id}).then(()=>navigate(0));
     }
-    console.log(props);
+
     return ( 
         <span className="sitem" style = {{display:"flex"}}>
             <h4>{props.user.student_id}</h4>

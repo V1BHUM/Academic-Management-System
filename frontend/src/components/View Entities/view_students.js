@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect,useState } from "react";
-import StudentItem from "./student_item";
+import StudentItem from "../List Items/student_item";
 
 
 const ViewStudents = () => {
@@ -13,7 +13,7 @@ const ViewStudents = () => {
     return ( 
         <div className="students">
             {students.map((s) => {
-                return <StudentItem user = {s}></StudentItem>
+                return <StudentItem key={s.student_id} user = {s}></StudentItem>
             })}
         </div>
      );

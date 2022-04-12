@@ -1,25 +1,18 @@
 import axios from 'axios';
-import react, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router';
-import SelectSearch,{fuzzySearch} from 'react-select-search';
-import { UserContext } from './contexts/UserContext';
+import { UserContext } from '../contexts/UserContext';
 import "./login.css"
 
 
 const Login = () => {
     
-    const {user,loginUser} = useContext(UserContext);
+    const {loginUser} = useContext(UserContext);
     const [Role,setRole] = useState("Student");
     const [username,setUsername] = useState();
     const [password,setPassword] = useState();
     const [prob,setProb] = useState(false);
     const navigate = useNavigate();
-
-    const loginOptions = [
-        {name:'Student',value:'Student'},
-        {name:'Professor',value:'Professor'},
-        {name:'Admin',value:'Admin'}
-    ]
 
     const handleSubmit = function(r){
         r.preventDefault();
@@ -89,13 +82,13 @@ const Login = () => {
                 {Role||"Select Role"}
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" onClick={function(){
+                <li><a class="dropdown-item" href='#test' onClick={function(){
                     setRole("Student")
                 }}>Student</a></li>
-                <li><a class="dropdown-item" onClick={function(){
+                <li><a class="dropdown-item" href='#test' onClick={function(){
                     setRole("Professor")
                 }}>Professor</a></li>
-                <li><a class="dropdown-item" onClick={function(){
+                <li><a class="dropdown-item" href='#test' onClick={function(){
                     setRole("Admin")
                 }}>Admin</a></li>
             </ul>
@@ -105,10 +98,6 @@ const Login = () => {
             </form>
         </div>
      );
-
-     function test(obj){
-         console.log(obj);
-     }
 }
  
 export default Login;

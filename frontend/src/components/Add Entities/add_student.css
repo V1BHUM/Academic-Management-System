@@ -1,0 +1,21 @@
+.add-student{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.temp{
+    display: flex;
+    padding: 0px 100px 0px 100px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.temp h6{
+    width: 500px;
+    text-align: start;
+}
+.temp input{
+    margin: 0px;
+}
