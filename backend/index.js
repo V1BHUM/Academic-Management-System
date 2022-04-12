@@ -20,7 +20,7 @@ app.use(cors());    //Enable CORS
 app.use(express.urlencoded({extended: true})); // Enables accessing request parameters
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000; //Acess the PORT variable in the .env
+const PORT = process.env.PORT || 3010; //Acess the PORT variable in the .env
 
 app.listen(PORT,() => {
     console.log("Server running at port "+PORT);
@@ -77,6 +77,20 @@ app.get("/professor/all", (req, res) => {
 
 app.post("/student/add", (req, res) => {
     connection.execute("INSERT INTO STUDENT VALUES(?, ?, ?, ?)", [req.body.student_id, req.body.first_name, req.body.last_name, req.body.password], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/professor/add", (req, res) => {
+    connection.execute("INSERT INTO PROFESSOR VALUES(?, ?, ?, ?, ?)",[req.body.professor_id, req.body.password, req.body.email, req.body.first_name, req.body.last_name], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/course/add", (req, res) => {
+    connection.execute("INSERT INTO COURSE VALUES(?, ?, ?)",[req.body.ic, req.body.course_id, req.body.course_name],(err, results, fields) => {
         if(err) console.log(err);
         res.json(results);
     });

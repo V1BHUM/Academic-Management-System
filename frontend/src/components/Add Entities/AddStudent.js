@@ -19,33 +19,31 @@ const AddStudent = () => {
 
     return ( 
         <div className="add-student">
-            <div className="temp">
-                <h6>Enter Name : </h6>
-                <input type = "text" id = "username" className= 'form-control' placeholder='Enter your username' required onChange={(e) => {
-            }}></input>
-            </div>
-            <div className="temp">
-                <h6>Enter Name Name Name : </h6>
-                <input type = "text" id = "username" className= 'form-control' placeholder='Enter your username' required onChange={(e) => {
-            }}></input>
-            </div>
-            <div className="temp">
-                <h6>Enter Name : </h6>
-                <input type = "text" id = "username" className= 'form-control' placeholder='Enter your username' required onChange={(e) => {
-            }}></input>
-            </div>
-            <div className="temp">
-                <h6>EnterName Name : </h6>
-                <input type = "text" id = "username" className= 'form-control' placeholder='Enter your username' required onChange={(e) => {
-            }}></input>
-            </div>
-            <div className="temp">
-                <h6>Enter Name : </h6>
-                <input type = "text" id = "username" className= 'form-control' placeholder='Enter your username' required onChange={(e) => {
-            }}></input>
-            </div>
-            <br/>
-            <button className=' button btn btn-primary' >Logout</button>
+            <form className="add-student-form" onSubmit={addStudent}>
+                <h3>New Student Form</h3>
+
+                <div className="input-field">
+                    <label htmlFor="student-id" className="form-label">Student ID :</label>
+                    <input id="student-id" className="form-control" placeholder="Enter Student ID" onChange={e => setStudentID(e.target.value)} required/>
+                </div>
+
+                <div className="input-field">
+                    <label htmlFor="password" className="form-label">Password :</label>
+                    <input id="password" className="form-control" placeholder="Enter Student Password" onChange={e => setPassword(e.target.value)} required/>
+                </div>
+
+                <div className="input-field">
+                    <label htmlFor="first-name" className="form-label">First Name :</label>
+                    <input id="first-name" className="form-control" placeholder="Enter Student's First Name" onChange={e => setFirstName(e.target.value)} required/>
+                </div>
+
+                <div className="input-field">
+                    <label htmlFor="last-name" className="form-label">Last Name :</label>
+                    <input id="last-name" className="form-control" placeholder="Enter Student's Last Name" onChange={e => setLastName(e.target.value)} required/>
+                </div>
+
+                <button type="submit" className="add-btn btn btn-primary">Add Student</button>
+            </form>
         </div>
     );
 }

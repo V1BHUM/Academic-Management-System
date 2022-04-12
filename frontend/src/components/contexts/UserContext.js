@@ -20,7 +20,7 @@ const UserContextProvider = (props) => {
 
     useEffect(function(){
         setUser(JSON.parse(sessionStorage.getItem("user")));
-        setUser(sessionStorage.getItem("auth"));
+        setAuth(sessionStorage.getItem("auth"));
         setLoading(true);
     },[]);
 
