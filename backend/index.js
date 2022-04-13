@@ -120,6 +120,10 @@ app.post("/course/info", (req, res) => {
 app.post("/course/section/add",(req, res) => {
     connection.execute("INSERT INTO SECTION VALUES(?,?)",[req.body.section_id, req.body.course_id], (err,results,fields) => {
         if(err) console.log(err);
-        res.json(err);
+        req.body.profList.map(p => {
+            connection.execute("INSERT INTO TEACHES VALUES(?, ?, ?)",[p, req.body.section_id, req.body.course_id], (err1, results1, fields1) => {
+                res.json(results1);
+            });
+        });
     });
 });
