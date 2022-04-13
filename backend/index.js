@@ -90,8 +90,36 @@ app.post("/professor/add", (req, res) => {
 });
 
 app.post("/course/add", (req, res) => {
-    connection.execute("INSERT INTO COURSE VALUES(?, ?, ?)",[req.body.ic, req.body.course_id, req.body.course_name],(err, results, fields) => {
+    connection.execute("INSERT INTO COURSE VALUES(?, ?, ?)",[req.body.course_id, req.body.ic, req.body.course_name],(err, results, fields) => {
         if(err) console.log(err);
         res.json(results);
+    });
+});
+
+app.post("/course/ic", (req,res) => {
+    connection.execute("SELECT * FROM COURSE WHERE IC=?",[req.body.ic], (err,results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/course/sections", (req, res) => {
+    connection.execute("SELECT * FROM SECTION WHERE COURSE_ID=?",[req.body.course_id], (err,results,fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/course/info", (req, res) => {
+    connection.execute("SELECT first_name,last_name,course_name,ic,course_id FROM COURSE C JOIN PROFESSOR P ON C.IC=P.PROFESSOR_ID WHERE COURSE_ID=?",[req.body.course_id], (err,results,fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/course/section/add",(req, res) => {
+    connection.execute("INSERT INTO SECTION VALUES(?,?)",[req.body.section_id, req.body.course_id], (err,results,fields) => {
+        if(err) console.log(err);
+        res.json(err);
     });
 });

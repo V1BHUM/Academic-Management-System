@@ -55,6 +55,9 @@ const Login = () => {
                 if((res.data.length !== 0) && res.data[0].password === password)
                 {
                     setProb(false)
+                    const temp_user = {professor_id: res.data[0].professor_id, first_name: res.data[0].first_name, last_name: res.data[0].last_name, role: "professor"}
+                    loginUser(temp_user);
+                    navigate("/professor");
                 }
                 else
                     setProb(true);

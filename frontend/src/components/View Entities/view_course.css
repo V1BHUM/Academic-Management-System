@@ -1,0 +1,14 @@
+.course
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 30px;
+    background-color: ghostwhite;
+}
+
+.course-details{
+    padding-bottom: 50px;
+}
