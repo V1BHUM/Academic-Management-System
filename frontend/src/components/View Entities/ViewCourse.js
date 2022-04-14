@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { UserContext } from "../contexts/UserContext";
+import SectionItem from "../List Items/SectionItem";
 import './view_course.css'
 
 const ViewCourse = () => {
@@ -35,6 +36,9 @@ const ViewCourse = () => {
             <div className="course-sections">
                 <h3>Sections</h3>
                 {/* Render Sections here */}
+                {sections.length > 0 && sections.map(s =>{
+                    return <SectionItem courseID={s.course_id} sectionID={s.section_id} />
+                })}
 
                {loading && user.role === "professor" && user.professor_id === courseInfo.ic && <button className="btn btn-primary" onClick={_ => navigate("addSection")} >Add Section</button>}
             </div>

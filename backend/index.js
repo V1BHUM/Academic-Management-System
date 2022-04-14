@@ -122,8 +122,23 @@ app.post("/course/section/add",(req, res) => {
         if(err) console.log(err);
         req.body.profList.map(p => {
             connection.execute("INSERT INTO TEACHES VALUES(?, ?, ?)",[p, req.body.section_id, req.body.course_id], (err1, results1, fields1) => {
-                res.json(results1);
+               
             });
         });
+        res.json(results);
     });
 });
+
+app.post("/section/item", (req, res) => {
+    var response = {profList:[],courseInfo:{}};
+    connection.execute("SELECT * FROM PROFESSOR P WHERE PROFESSOR_ID IN (SELECT PROFESSOR_ID FROM TEACHES T WHERE SECTION_ID=? AND COURSE_ID=?)",[req.body.section_id,req.body.course_id], (err, results, fields) => {
+        if(err) console.log(err);
+        connection.execute("SELECT * FROM COURSE WHERE COURSE_ID=?",[req.body.course_id], (err1, results1, fields1) => {
+            response.profList = results;
+            response.courseInfo = results1[0];
+            res.json(response);
+        });
+    });
+    // console.log(req.body);
+});
+

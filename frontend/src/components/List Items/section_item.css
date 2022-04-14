@@ -1,0 +1,22 @@
+.section-item{
+    display: flex;
+    margin: 20px;
+    padding: 30px;
+    border-bottom: 2px solid black;
+    min-width: 500px;
+    min-height: 200px;
+    justify-content: space-evenly;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+
+.section-item .section-btns
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-item .section-info{
+    width: 400px;
+}

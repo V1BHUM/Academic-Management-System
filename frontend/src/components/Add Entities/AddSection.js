@@ -1,12 +1,14 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import SelectSearch, { fuzzySearch } from "react-select-search";
+import { UserContext } from "../contexts/UserContext";
 import './add_section.css';
 
 const AddSection = () => {
     const navigate = useNavigate();
     const {courseID} = useParams();
+    const {user} = useContext(UserContext);
 
     const [isRoot, setRoot] = useState(false);
     const [type,setType] = useState("L");
@@ -42,16 +44,22 @@ const AddSection = () => {
         if(isRoot)
         {
             sectionID = "L";
+            axios.post("http://localhost:3010/course/section/add",{section_id: sectionID, course_id: courseID, profList: [user.professor_id]})
+            .then(res => {
+                navigate(-1);
+            });
         }
         else
         {
             sectionID = type + number;
-        }
 
-        axios.post("http://localhost:3010/course/section/add",{section_id: sectionID, course_id: courseID, profList: profList})
+            axios.post("http://localhost:3010/course/section/add",{section_id: sectionID, course_id: courseID, profList: profList})
             .then(res => {
                 navigate(-1);
             });
+        }
+
+        
     }
 
 
