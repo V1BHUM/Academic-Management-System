@@ -12,3 +12,9 @@
 .course-details{
     padding-bottom: 50px;
 }
+
+.course-sections
+{
+    overflow-y: scroll;
+    height: 500px;
+}

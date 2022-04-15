@@ -6,6 +6,7 @@ import UserContextProvider from './components/contexts/UserContext';
 import ProfessorDashboard from './components/Dashboards/ProfessorDashboard';
 import ViewCourse from './components/View Entities/ViewCourse';
 import AddSection from './components/Add Entities/AddSection';
+import StudentDashboard from './components/Dashboards/StudentDashboard';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/admin" element={<AdminDash />}/>
             <Route path="/professor" element={<ProfessorDashboard />} />
+            <Route path="/student" element={<StudentDashboard />} />
             <Route path="/course/:courseID" element={<ViewCourse />} />
             <Route path="/course/:courseID/addSection" element={<AddSection />} />
           

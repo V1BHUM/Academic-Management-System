@@ -23,7 +23,10 @@ const Login = () => {
                 console.log(res);
                 if((res.data.length !== 0) && res.data[0].password === password)
                 {
-                    setProb(false)
+                    setProb(false);
+                    const temp_user = {student_id: res.data[0].student_id, first_name: res.data[0].first_name, last_name: res.data[0].last_name, role: "student"}
+                    loginUser(temp_user);
+                    navigate("/student");
                 }
                 else
                     setProb(true);
@@ -80,18 +83,18 @@ const Login = () => {
             }}></input>
             <br></br>
 
-            <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <div className="dropdown">
+            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 {Role||"Select Role"}
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href='#test' onClick={function(){
+                <li><a className="dropdown-item" href='#test' onClick={function(){
                     setRole("Student")
                 }}>Student</a></li>
-                <li><a class="dropdown-item" href='#test' onClick={function(){
+                <li><a className="dropdown-item" href='#test' onClick={function(){
                     setRole("Professor")
                 }}>Professor</a></li>
-                <li><a class="dropdown-item" href='#test' onClick={function(){
+                <li><a className="dropdown-item" href='#test' onClick={function(){
                     setRole("Admin")
                 }}>Admin</a></li>
             </ul>

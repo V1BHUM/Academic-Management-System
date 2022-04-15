@@ -40,8 +40,9 @@ const ViewCourse = () => {
                     return <SectionItem courseID={s.course_id} sectionID={s.section_id} />
                 })}
 
-               {loading && user.role === "professor" && user.professor_id === courseInfo.ic && <button className="btn btn-primary" onClick={_ => navigate("addSection")} >Add Section</button>}
             </div>
+            {loading && user.role === "professor" && user.professor_id === courseInfo.ic && <button className="btn btn-primary" onClick={_ => navigate("addSection")} >Add Section</button>}
+
         </div>
      );
 }

@@ -1,19 +1,19 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { UserContext } from "../contexts/UserContext";
-import ViewProfessorSections from "../List Items/ViewProfessorSections";
-import ViewICCourses from "../View Entities/ViewICCourses";
-import './admin_dash.css';
+import ViewCourses from "../View Entities/ViewCourses";
+import ViewStudentSections from "../View Entities/ViewStudentSections";
 
-const ProfessorDashboard = () => {
-    const navigate = useNavigate();
+const StudentDashboard = () => {
     const {user, loading, logoutUser} = useContext(UserContext);
+    const navigate = useNavigate();
+
 
     const [menu,setMenu] = useState(true);
     const [ind,setInd] = useState("");
 
-    return ( 
-        <div className="professor">
+    return (
+        <div className="student">
             <div className="header"> 
                 <button  className='menu' onClick={()=>{
                     setMenu(!menu);
@@ -35,25 +35,22 @@ const ProfessorDashboard = () => {
                         sessionStorage.setItem("index",e.target.innerHTML);
                     }}>
 
-                        <li style = {{borderRight:(ind === "View Students")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>IC Courses</li>
+                        <li style = {{borderRight:(ind === "View Students")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Courses</li>
                         <li style = {{borderRight:(ind === "View Students")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Your Sections</li>
                         
                     </ul>
                 </div>
 
                 <div className="content">
-                    {(ind === "IC Courses")? 
-                        <ViewICCourses /> : 
-                        (ind === "Your Sections") ? 
-                        <ViewProfessorSections /> : <p></p>
+                    {(ind === "View Courses") ?
+                        <ViewCourses /> : 
+                        (ind === "Your Sections") ?
+                        <ViewStudentSections /> : <p></p>
                     }
                 </div>
             </div>
-
         </div>
-
-        
-     );
+    );
 }
  
-export default ProfessorDashboard;
+export default StudentDashboard;

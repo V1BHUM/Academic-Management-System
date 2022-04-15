@@ -139,6 +139,26 @@ app.post("/section/item", (req, res) => {
             res.json(response);
         });
     });
-    // console.log(req.body);
+});
+
+app.post('/section/professor', (req, res) => {
+    connection.execute("SELECT * FROM TEACHES WHERE PROFESSOR_ID=?",[req.body.professor_id], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/student/registerSection", (req, res) => {
+    connection.execute("INSERT INTO STUDIES VALUES(?, ?, ?)", [req.body.student_id, req.body.section_id, req.body.course_id], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/student/sections", (req, res) => {
+    connection.execute("SELECT * FROM STUDIES WHERE STUDENT_ID=?", [req.body.student_id], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
 });
 
