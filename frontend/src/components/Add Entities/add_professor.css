@@ -10,7 +10,7 @@
     padding-bottom: 50px;
 }
 
-.input-field
+.add-professor .input-field
 {
     display: flex;
     padding: 30px 100px 30px 100px;
@@ -19,11 +19,11 @@
     justify-content: center;
 }
 
-.input-field label{
+.add-professor .input-field label{
     width: 500px;
     text-align: start;
 }
 
-.add-btn{
+.add-professor .add-btn{
     margin-top: 50px;
 }

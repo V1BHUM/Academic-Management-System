@@ -19,7 +19,7 @@ const CourseItem = (props) => {
             <h4>{props.course.course_id}</h4>
             <h4>{props.course.course_name}</h4>
             <button className = 'view button btn btn-primary' onClick={_ => navigate("/course/" + props.course.course_id)}>View</button>
-            {user.role !== "student" && <button className = 'delete button btn btn-primary' onClick={delCourse}>Delete</button>}
+            {user.role === "admin" && <button className = 'delete button btn btn-primary' onClick={delCourse}>Delete</button>}
             
             <br></br>
         </span>

@@ -6,6 +6,7 @@ import './section_item.css';
 
 const SectionItem = (props) => {
     const {courseID, sectionID} = props;
+    const displayRegister = (props.displayRegister !== undefined) ? props.displayRegister : true;
     const {user} = useContext(UserContext);
     const navigate = useNavigate();
 
@@ -17,12 +18,14 @@ const SectionItem = (props) => {
             .then(res => {
                 setProfessors(res.data.profList);
                 setCourseInfo(res.data.courseInfo);
-                console.log(res.data);
             });
     },[]);
 
     const deleteSection = () => {
-
+        axios.post("http://localhost:3010/section/delete", {section_id: sectionID, course_id: courseID})
+            .then(res => {
+                navigate(0);
+            });
     }
 
     const registerSection = () => {
@@ -44,9 +47,9 @@ const SectionItem = (props) => {
                 </div>
             </div>
             <div className="section-btns">
-                <button className="btn btn-primary" onClick={deleteSection}>View</button>
+                <button className="btn btn-primary" onClick={() => navigate("/course/" + courseID + "/" + sectionID)}>View</button>
                 {user.professor_id === courseInfo.ic && <button className="btn btn-primary" onClick={deleteSection}>Delete</button>}
-                {user.role === "student" && <button className="btn btn-primary" onClick={registerSection} >Register</button>}
+                {displayRegister && user.role === "student" && <button className="btn btn-primary" onClick={registerSection} >Register</button>}
             </div>
 
         </div>

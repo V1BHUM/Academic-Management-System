@@ -6,8 +6,21 @@ const ProfessorItem = (props) => {
     const navigate = useNavigate();
 
     const delProfessor = () => {
-        axios.post("http://localhost:3010/professor/delete")
-            .then(_ => navigate(0));
+        axios.post("http://localhost:3010/professor/delete", {professor_id: props.professor.professor_id})
+            .then(res => {
+                if(res.data.msg === "Delete Courses")
+                {
+                    alert("Professor is IC of one or more courses. Please delete them first");
+                }
+                else if(res.data.msg === "Delete Sections")
+                {
+                    alert("Professor is part of one or more sections. Please delete them first");
+                }
+                else
+                {
+                    navigate(0);
+                }
+            });
     }
 
     return ( 

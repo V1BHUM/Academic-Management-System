@@ -5,6 +5,8 @@ import "./student_item.css"
 
 const StudentItem = (props) => {
     const navigate = useNavigate();
+
+    
     const delStudent = function(){
         axios.post("http://localhost:3010/student/delete",{student_id:props.user.student_id}).then(()=>navigate(0));
     }

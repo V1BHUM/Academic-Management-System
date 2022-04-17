@@ -37,7 +37,7 @@ const ViewCourse = () => {
                 <h3>Sections</h3>
                 {/* Render Sections here */}
                 {sections.length > 0 && sections.map(s =>{
-                    return <SectionItem courseID={s.course_id} sectionID={s.section_id} />
+                    return <SectionItem key={s.course_id+s.section_id} courseID={s.course_id} sectionID={s.section_id} />
                 })}
 
             </div>

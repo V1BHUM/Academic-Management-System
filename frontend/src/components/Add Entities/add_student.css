@@ -10,7 +10,7 @@
     padding-bottom: 50px;
 }
 
-.input-field
+.add-student .input-field
 {
     display: flex;
     padding: 40px 100px 40px 100px;
@@ -19,11 +19,11 @@
     justify-content: center;
 }
 
-.input-field label{
+.add-student .input-field label{
     width: 500px;
     text-align: start;
 }
 
-.add-btn{
+.add-student .add-btn{
     margin-top: 50px;
 }

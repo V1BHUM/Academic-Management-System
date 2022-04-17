@@ -9,11 +9,11 @@
     background-color: ghostwhite;
 }
 
-.course-details{
+.course .course-details{
     padding-bottom: 50px;
 }
 
-.course-sections
+.course .course-sections
 {
     overflow-y: scroll;
     height: 500px;

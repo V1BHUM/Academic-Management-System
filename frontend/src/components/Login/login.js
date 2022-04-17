@@ -87,7 +87,7 @@ const Login = () => {
             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 {Role||"Select Role"}
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a className="dropdown-item" href='#test' onClick={function(){
                     setRole("Student")
                 }}>Student</a></li>

@@ -55,9 +55,12 @@ app.get("/student/all",(req,res) => {
 });
 
 app.post("/student/delete",(req,res) =>{
-    connection.execute("DELETE from student where student_id=?",[req.body.student_id],(err,results,fields) => {
+    connection.execute("DELETE FROM STUDIES WHERE STUDENT_ID=?", [req.body.student_id], (err, results, fields) => {
         if(err) console.log(err);
-        res.json({abc:""});
+        connection.execute("DELETE from student where student_id=?",[req.body.student_id],(err1,results1,fields1) => {
+            if(err1) console.log(err1);
+            res.json({abc:""});
+        });
     });
 });
 
@@ -161,4 +164,152 @@ app.post("/student/sections", (req, res) => {
         res.json(results);
     });
 });
+
+app.post("/section/allInfo", (req, res) => {
+
+    let info = {
+        profList: [],
+        courseName: "",
+        loading:false
+    }
+
+    connection.execute("SELECT * FROM TEACHES T JOIN PROFESSOR P ON T.PROFESSOR_ID=P.PROFESSOR_ID WHERE SECTION_ID=? AND COURSE_ID=?",[req.body.section_id, req.body.course_id], (err, results, fields) => {
+        if(err) console.log(err);
+        info.profList = results;
+
+        connection.execute("SELECT course_name  FROM COURSE WHERE COURSE_ID=?",[req.body.course_id], (err1, results1, fields1) => {
+            info.courseName = results1[0].course_name;
+            if(err1) console.log(err1);
+            res.json(info)
+        });
+    });
+});
+
+app.post("/section/topics", (req, res) => {
+    connection.execute("SELECT * FROM TOPIC WHERE SECTION_ID=? AND COURSE_ID=?",[req.body.section_id, req.body.course_id], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/section/topicInfo", (req, res) => {
+    connection.execute("SELECT * FROM TOPIC WHERE TOPIC_ID=?", [req.body.topic_id], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results[0]);
+    });
+});
+
+app.post("/section/topics/item", (req, res) => {
+    connection.execute("SELECT * FROM ITEM WHERE TOPIC_ID=?", [req.body.topic_id], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/section/topic/add", (req, res) => {
+    connection.execute("INSERT INTO TOPIC(TYPE, HEADING, SECTION_ID, COURSE_ID) VALUES(?, ?, ?, ?)", [req.body.type, req.body.heading, req.body.section_id, req.body.course_id], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/section/topic/item/add", (req, res) => {
+    connection.execute("INSERT INTO ITEM(TOPIC_ID, DESCRIPTION, FILE_LINK) VALUES (?, ?, ?)", [req.body.topic_id, req.body.description, req.body.fileLink], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/section/topic/item/delete", (req, res) => {
+    connection.execute("DELETE FROM ITEM WHERE ITEM_ID=?",[req.body.item_id], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/section/topic/delete", (req, res) => {
+    connection.execute("DELETE FROM ITEM WHERE TOPIC_ID=?", [req.body.topic_id], (err, results, fields) => {
+        if(err) console.log(err);
+        connection.execute("DELETE FROM TOPIC WHERE TOPIC_ID=?",[req.body.topic_id], (err1, results1, fields1) => {
+            if(err1) console.log(err1);
+            res.json(results1);
+        });
+    });
+});
+
+app.post("/section/delete", (req, res) => {
+    connection.execute("DELETE FROM TEACHES WHERE SECTION_ID IN ( SELECT SECTION_ID FROM SECTION WHERE COURSE_ID=?) AND COURSE_ID=?",[req.body.course_id, req.body.course_id], (err, results, fields) => {
+        if(err) console.log(err);
+        connection.execute("DELETE FROM ITEM WHERE TOPIC_ID IN (SELECT TOPIC_ID FROM TOPIC WHERE SECTION_ID=? AND COURSE_ID=?)", [req.body.section_id, req.body.course_id], (err1, results1, fields1) => {
+            if(err1) console.log(err1);
+            connection.execute("DELETE FROM TOPIC WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id], (err2, results2, fields2) => {
+                if(err2) console.log(err2);
+                connection.execute("DELETE FROM STUDIES WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id], (err3, results3, fields3) => {
+                    if(err3) console.log(err3);
+
+                    const query = connection.query("DELETE FROM TEACHES WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id]);
+
+                    connection.execute(query, (err5, results5, fields5) => {
+                        if(err5) console.log(err5);
+                        // console.log(query.sql);
+                        connection.execute("DELETE FROM SECTION WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id], (err4, results4, fields4) => {
+                            if(err4) console.log(err4);
+                            res.json(results4);
+                        });
+                    })
+                });
+            });
+        });
+    });
+});
+
+app.post("/course/delete", (req,res) => {
+    connection.execute("DELETE FROM STUDIES WHERE COURSE_ID=?", [req.body.course_id], (err, results, fields) => {
+        if(err) console.log(err);
+        connection.execute("DELETE FROM TEACHES WHERE COURSE_ID=?", [req.body.course_id], (err1, results1, fields1) => {
+            if(err1) console.log(err1);
+            connection.execute("DELETE FROM ITEM WHERE TOPIC_ID IN ( SELECT TOPIC_ID FROM TOPIC WHERE COURSE_ID=? )", [req.body.course_id, req.body.course_id], (err2, results2, fields2) => {
+                if(err2) console.log(err2);
+                connection.execute("DELETE FROM TOPIC WHERE COURSE_ID=?", [req.body.course_id], (err3, results3, fields3) => {
+                    if(err3) console.log(err3);
+                    connection.execute("DELETE FROM SECTION WHERE COURSE_ID=?", [req.body.course_id], (err4, results4, fields4) => {
+                        if(err4) console.log(err4);
+                        connection.execute("DELETE FROM COURSE WHERE COURSE_ID=?", [req.body.course_id], (err5, results5, fields5) => {
+                            if(err5) console.log(err5);
+                            res.json(results5);
+                        });
+                    });
+                });
+            });
+        });
+    });
+});
+
+app.post("/professor/delete", (req, res) => {
+    connection.execute("SELECT COUNT(*) AS count FROM COURSE WHERE IC=?", [req.body.professor_id], (err,results,fields) => {
+        if(err) console.log(err);
+        if(results[0].count > 0)
+        {
+            res.json({msg:"Delete Courses"});
+        }
+        else
+        {
+            connection.execute("SELECT COUNT(*) AS count FROM TEACHES WHERE PROFESSOR_ID=?", [req.body.professor_id], (err1, results1, fields1) => {
+                if(err1) console.log(err1);
+
+                if(results1[0].count > 0)
+                {
+                    res.json({msg:"Delete Sections"});
+                }
+                else
+                {
+                    connection.execute("DELETE FROM PROFESSOR WHERE PROFESSOR_ID=?",[req.body.professor_id], (err2, results2, fields2) => {
+                        if(err2) console.log(err2);
+                        res.json(results2);
+                    });
+                }
+            });
+        }
+    });
+})
 

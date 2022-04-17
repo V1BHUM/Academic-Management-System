@@ -7,6 +7,8 @@ import ProfessorDashboard from './components/Dashboards/ProfessorDashboard';
 import ViewCourse from './components/View Entities/ViewCourse';
 import AddSection from './components/Add Entities/AddSection';
 import StudentDashboard from './components/Dashboards/StudentDashboard';
+import ViewSection from './components/View Entities/ViewSection';
+import AddTopic from './components/Add Entities/AddTopic';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/student" element={<StudentDashboard />} />
             <Route path="/course/:courseID" element={<ViewCourse />} />
             <Route path="/course/:courseID/addSection" element={<AddSection />} />
+            <Route path="/course/:courseID/:sectionID" element={<ViewSection />} />
+            <Route path="/course/:courseID/:sectionID/addTopic" element={<AddTopic />} />
           
           </Routes>
         </Router>

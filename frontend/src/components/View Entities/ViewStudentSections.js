@@ -16,12 +16,12 @@ const ViewStudentSections = () => {
                     setSections(res.data);
                 });
         }
-    },[loading]);
+    },[loading, user.student_id]);
 
     return ( 
         <div className="view-student-sections">
             {sections.map(s => {
-                return <SectionItem courseID={s.course_id} sectionID={s.section_id} />
+                return <SectionItem key={s.course_id+s.section_id} courseID={s.course_id} sectionID={s.section_id} displayRegister={false} />
             })}
         </div>
     );

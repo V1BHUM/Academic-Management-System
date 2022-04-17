@@ -6,11 +6,11 @@
 
 }
 
-.add-course h3{
+.add-course .add-course h3{
     padding-bottom: 50px;
 }
 
-.input-field
+.add-course .input-field
 {
     display: flex;
     padding: 30px 100px 30px 100px;
@@ -19,16 +19,16 @@
     justify-content: center;
 }
 
-.input-field label{
+.add-course .input-field label{
     width: 500px;
     text-align: start;
 }
 
-.add-btn{
+.add-course .add-btn{
     margin-top: 50px;
 }
 
-.select-search{
+.add-course .select-search{
     margin: auto;
     margin-top: 50px;
 }
