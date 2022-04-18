@@ -1,0 +1,33 @@
+.topic{
+    display: flex;
+    width: 96%;
+    align-items: flex-start;
+    box-shadow: 5px 5px 6px rgba(0,0,0,0.4);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 15px;
+    margin: auto;
+    margin-top: 10px;
+    background-color: azure;
+    border-left: 10px solid rgb(58, 146, 247);
+    overflow-x: auto;
+    transition: 0.3s;
+}
+
+.topic:hover{
+    width: 98%;
+    padding: 18px;
+    background-color: rgb(244, 252, 252);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+}
+
+.topic .topic-heading{
+    margin-left: 20px;
+    display: flex;
+    width: 96%;
+    justify-content: space-between;
+}
+
+.topic-items{
+    width: 90%;
+}

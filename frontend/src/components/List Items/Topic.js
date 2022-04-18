@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import AddTopicItem from "../Add Entities/AddTopicItem";
 import { UserContext } from "../contexts/UserContext";
 import TopicItem from "./TopicItem";
+import './topic.css';
 
 const Topic = (props) => {
     const {topicID} = props;
@@ -36,7 +37,11 @@ const Topic = (props) => {
 
     return ( 
         <div className="topic">
-            <h5>{topicInfo.heading} {user.role !== "student" && <button className="btn btn-danger" onClick={deleteTopic}>Delete Topic</button>}</h5>
+            <div className="topic-heading">
+                <h5>{topicInfo.heading} {user.role !== "student" && <button className="btn btn-danger" onClick={deleteTopic}>Delete Topic</button>}</h5>
+                {user.role !== "student" && !showItemForm && <button className="btn btn-primary" onClick={_ => setShowItemForm(true)}>Add Item</button>}
+                {showItemForm && <AddTopicItem toggleFunction={setShowItemForm} topicID={topicInfo.topic_id} />}
+            </div>
             <div className="topic-items">
                 {items.map(i => {
                     return(
@@ -44,8 +49,7 @@ const Topic = (props) => {
                     );
                 })}
             </div>
-            {user.role !== "student" && !showItemForm && <button className="btn btn-primary" onClick={_ => setShowItemForm(true)}>Add Item</button>}
-            {showItemForm && <AddTopicItem toggleFunction={setShowItemForm} topicID={topicInfo.topic_id} />}
+            
         </div>
      );
 }

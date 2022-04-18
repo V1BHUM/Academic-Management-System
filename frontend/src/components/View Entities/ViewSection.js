@@ -4,6 +4,7 @@ import {  useParams } from "react-router";
 import AddTopic from "../Add Entities/AddTopic";
 import { UserContext } from "../contexts/UserContext";
 import Topic from "../List Items/Topic";
+import './view_section.css';
 
 const ViewSection = () => {
     const {courseID, sectionID} = useParams();
@@ -35,13 +36,20 @@ const ViewSection = () => {
                 {!sectionInfo.loading && sectionInfo.profList.map(p => <p key={p.professor_id}>{p.first_name} {p.last_name}</p>)}
             </div>
             
-            <div className="section-topics">
+            <div className="section-topics-heading">
                 <h3>Topics:</h3>
-                {topics.map(t => {
-                    return <Topic key={t.topic_id} topicID={t.topic_id} />
-                })}
                 {user.role !== "student" && !showTopicForm && <button className="btn btn-primary" onClick={_ => setShowTopicForm(true)}>Add Topic</button>}
                 {showTopicForm && <AddTopic toggleFunction={setShowTopicForm} />}
+            </div>
+
+            <div className="section-topics">
+                
+                <div className="section-topic-items">
+                    {topics.map(t => {
+                        return <Topic key={t.topic_id} topicID={t.topic_id} />
+                    })}
+                </div>
+                
             </div>
         </div>
     );

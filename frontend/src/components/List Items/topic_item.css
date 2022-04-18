@@ -1,0 +1,16 @@
+.topic-item{
+    display: flex;
+    width: 96%;
+    align-items: flex-start;
+    box-shadow: 5px 5px 6px rgba(0,0,0,0.4);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 15px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(228, 241, 241);
+    border-left: 10px solid rgb(39, 121, 214);
+    overflow-x: auto;
+    transition: 0.3s;
+}

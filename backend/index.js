@@ -238,20 +238,17 @@ app.post("/section/topic/delete", (req, res) => {
 });
 
 app.post("/section/delete", (req, res) => {
-
-        connection.execute("DELETE FROM ITEM WHERE TOPIC_ID IN (SELECT TOPIC_ID FROM TOPIC WHERE SECTION_ID=? AND COURSE_ID=?)", [req.body.section_id, req.body.course_id], (err1, results1, fields1) => {
-            if(err1) console.log(err1);
-            connection.execute("DELETE FROM TOPIC WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id], (err2, results2, fields2) => {
-                if(err2) console.log(err2);
-                connection.execute("DELETE FROM STUDIES WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id], (err3, results3, fields3) => {
-                    if(err3) console.log(err3);
-
-                    connection.execute("DELETE FROM TEACHES WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id], (err5, results5, fields5) => {
-                        if(err5) console.log(err5);
-                        connection.execute("DELETE FROM SECTION WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id], (err4, results4, fields4) => {
-                            if(err4) console.log(err4);
-                            res.json(results4);
-                       
+    connection.execute("DELETE FROM ITEM WHERE TOPIC_ID IN (SELECT TOPIC_ID FROM TOPIC WHERE SECTION_ID=? AND COURSE_ID=?)", [req.body.section_id, req.body.course_id], (err1, results1, fields1) => {
+        if(err1) console.log(err1);
+        connection.execute("DELETE FROM TOPIC WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id], (err2, results2, fields2) => {
+            if(err2) console.log(err2);
+            connection.execute("DELETE FROM STUDIES WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id], (err3, results3, fields3) => {
+                if(err3) console.log(err3);
+                connection.execute("DELETE FROM TEACHES WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id], (err5, results5, fields5) => {
+                    if(err5) console.log(err5);
+                    connection.execute("DELETE FROM SECTION WHERE SECTION_ID=? AND COURSE_ID=?", [req.body.section_id, req.body.course_id], (err4, results4, fields4) => {
+                        if(err4) console.log(err4);
+                        res.json(results4);
                     })
                 });
             });

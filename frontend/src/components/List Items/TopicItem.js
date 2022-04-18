@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { useNavigate } from "react-router";
 import { UserContext } from "../contexts/UserContext";
+import './topic_item.css';
 
 const TopicItem = (props) => {
     const {item} = props;
