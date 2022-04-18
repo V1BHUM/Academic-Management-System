@@ -37,7 +37,7 @@ const AddProfessor = () => {
                 </div>
 
                 <div className="input-field">
-                    <label htmlFor="last-name" className="form-label">Student ID :</label>
+                    <label htmlFor="last-name" className="form-label">Last Name :</label>
                     <input id="last-name" className="form-control" placeholder="Enter Professor's Last Name" onChange={e => setLastName(e.target.value)} required/>
                 </div>
 

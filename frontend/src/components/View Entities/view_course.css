@@ -1,14 +1,25 @@
 .course
 {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding:50px;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
-    margin: 20px;
-    padding: 30px;
+    margin: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
     background-color: ghostwhite;
 }
+.course .enc{
+    margin-left: 20px;
+    display: flex;
+    width: 96%;
+    justify-content: space-between;
+}
 
+.course .course-details{
+    margin:auto;
+}
 .course .course-details{
     padding-bottom: 50px;
 }

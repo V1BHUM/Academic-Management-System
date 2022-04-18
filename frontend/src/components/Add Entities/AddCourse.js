@@ -48,12 +48,12 @@ const AddCourse = () => {
                 </div>
 
                 <div className="input-field">
-                    <label htmlFor="course-name" className="form-label">Professor ID :</label>
+                    <label htmlFor="course-name" className="form-label">Course Name :</label>
                     <input id="course-name" className="form-control" placeholder="Enter Course Name" onChange={e => setCourseName(e.target.value)} required/>
                 </div>
 
-                <SelectSearch options={selectSearchOptions} search filterOptions={fuzzySearch} value={ic} onChange={selectedValue => setIC(selectedValue)} />
-
+                <div className="ic input-field"><label>IC : </label><SelectSearch options={selectSearchOptions} search filterOptions={fuzzySearch} value={ic} onChange={selectedValue => setIC(selectedValue)} />
+                </div>
                 <button type="submit" className="add-btn btn btn-primary">Add Course</button>
             </form>
         </div>

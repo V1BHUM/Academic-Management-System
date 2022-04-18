@@ -1,22 +1,42 @@
+.section-item:hover{
+    width: 98%;
+    padding: 18px;
+    background-color: rgb(244, 252, 252);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+    }
+.section-prof-list{
+    height: 60px;
+    overflow-y:auto;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+}
 .section-item{
     display: flex;
-    margin: 20px;
-    padding: 30px;
-    border-bottom: 2px solid black;
-    min-width: 500px;
-    min-height: 200px;
-    justify-content: space-evenly;
-    background-color: aliceblue;
-    border-radius: 20px;
-}
+    width: 96%;
+    align-items: center;
+    box-shadow: 5px 5px 6px rgba(0,0,0,0.4);
+    justify-content: center;
+    padding: 15px;
+    margin: auto;
+    margin-top: 10px;
+    background-color: azure;
+    border-left: 10px solid rgb(58, 146, 247);
+    overflow-x: auto;
+    transition: 0.3s;
 
+}
+.section-item h3{
+    margin-left: 50px;
+}
 .section-item .section-btns
 {
+    margin-left:auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.section-item .section-info{
-    width: 400px;
+.section-btns .btn{
+    margin:10px;
 }

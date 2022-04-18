@@ -29,20 +29,20 @@ const ViewCourse = () => {
     return ( 
         <div className="course">
             <div className="course-details">
+                
                 <h3>{courseInfo.ic !== undefined && courseInfo.course_id} {courseInfo.ic !== undefined && courseInfo.course_name}</h3>
                 <h4>IC: {courseInfo.ic !== undefined && (courseInfo.first_name + " " + courseInfo.last_name)}</h4>
+                
+            </div>
+                <div className="enc"><h3>Sections</h3>{loading && user.role === "professor" && user.professor_id === courseInfo.ic && <button className="btn btn-primary" onClick={_ => navigate("addSection")} >Add Section</button>}
             </div>
 
-            <div className="course-sections">
-                <h3>Sections</h3>
                 {/* Render Sections here */}
-                {sections.length > 0 && sections.map(s =>{
+                {sections.length > 0?sections.map(s =>{
                     return <SectionItem key={s.course_id+s.section_id} courseID={s.course_id} sectionID={s.section_id} />
-                })}
-
-            </div>
-            {loading && user.role === "professor" && user.professor_id === courseInfo.ic && <button className="btn btn-primary" onClick={_ => navigate("addSection")} >Add Section</button>}
-
+                }):<p style={{margin:"auto"}}>nil</p>}
+ 
+            
         </div>
      );
 }
