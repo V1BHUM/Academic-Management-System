@@ -17,9 +17,11 @@ const Topic = (props) => {
     const [showItemForm,setShowItemForm] = useState(false);
 
     useEffect(() => {
+        
         axios.post("http://localhost:3010/section/topicInfo", {topic_id: topicID})
             .then(res => {
                 setTopicInfo(res.data);
+                console.log(res.data);
             });
 
         axios.post("http://localhost:3010/section/topics/item", {topic_id: topicID})
@@ -36,7 +38,7 @@ const Topic = (props) => {
     }
 
     return ( 
-        <div className="topic">
+        <div className={(topicInfo.type) ?"topic-announcement topic" : "topic" }>
             <div className="topic-heading">
                 <h5>{topicInfo.heading} {user.role !== "student" && <button className="btn btn-danger" onClick={deleteTopic}>Delete Topic</button>}</h5>
                 {user.role !== "student" && !showItemForm && <button className="btn btn-primary" onClick={_ => setShowItemForm(true)}>Add Item</button>}

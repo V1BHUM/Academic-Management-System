@@ -14,6 +14,10 @@
     transition: 0.3s;
 }
 
+.topic-announcement{
+    background-color: red;
+}
+
 .topic:hover{
     width: 98%;
     padding: 18px;

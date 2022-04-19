@@ -9,8 +9,15 @@
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgb(228, 241, 241);
+    background-color: white;
     border-left: 10px solid rgb(39, 121, 214);
     overflow-x: auto;
     transition: 0.3s;
+}
+
+.topic-item:hover{
+    width: 98%;
+    padding: 18px;
+    background-color: rgb(244, 252, 252);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
 }

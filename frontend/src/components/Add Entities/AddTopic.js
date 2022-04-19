@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import SelectSearch from "react-select-search";
+import SelectSearch, { fuzzySearch } from "react-select-search";
 import './add_topic.css';
 
 const AddTopic = (props) => {
@@ -9,12 +9,12 @@ const AddTopic = (props) => {
     const {courseID,sectionID} = useParams();
     const {toggleFunction} = props;
 
-    const [type,setType] = useState(false);
+    const [type,setType] = useState(0);
     const [heading,setHeading] = useState("");
 
     const typeOptions = [
-        {name: "Announcement", value: true},
-        {name: "Standard", value: false}
+        {name: "Announcement", value: 1},
+        {name: "Standard", value: 0},
     ]
     
     const addTopic = (e) => {
@@ -38,8 +38,7 @@ const AddTopic = (props) => {
                 <div className="input-dropdown">
 
                     <label htmlFor="topic-type">Section Type :</label>
-                    <SelectSearch options={typeOptions} id='topic-type' value={type} onChange={selectedValue => setType(selectedValue)} /> 
-
+                    <SelectSearch options={typeOptions} value={type} onChange={setType} />
                 </div>
 
                 <div className="input-field">

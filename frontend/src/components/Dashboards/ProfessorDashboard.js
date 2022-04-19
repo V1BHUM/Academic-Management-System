@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { UserContext } from "../contexts/UserContext";
 import ViewProfessorSections from "../List Items/ViewProfessorSections";
+import ChangePassword from "../Update Entities/ChangePassword";
 import ViewICCourses from "../View Entities/ViewICCourses";
 import './admin_dash.css';
 
@@ -37,6 +38,7 @@ const ProfessorDashboard = () => {
 
                         <li style = {{borderRight:(ind === "IC Courses")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>IC Courses</li>
                         <li style = {{borderRight:(ind === "Your Sections")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Your Sections</li>
+                        <li style = {{borderRight:(ind === "Update Password")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
                         
                     </ul>
                 </div>
@@ -45,7 +47,9 @@ const ProfessorDashboard = () => {
                     {(ind === "IC Courses")? 
                         <ViewICCourses /> : 
                         (ind === "Your Sections") ? 
-                        <ViewProfessorSections /> : <p></p>
+                        <ViewProfessorSections /> :
+                        (ind === "Update Password") ?
+                        <ChangePassword /> : <p></p>
                     }
                 </div>
             </div>

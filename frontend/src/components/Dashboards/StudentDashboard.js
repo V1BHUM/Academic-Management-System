@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { UserContext } from "../contexts/UserContext";
+import ChangePassword from "../Update Entities/ChangePassword";
 import ViewCourses from "../View Entities/ViewCourses";
 import ViewStudentSections from "../View Entities/ViewStudentSections";
 
@@ -37,6 +38,7 @@ const StudentDashboard = () => {
 
                         <li style = {{borderRight:(ind === "View Courses")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Courses</li>
                         <li style = {{borderRight:(ind === "Your Sections")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Your Sections</li>
+                        <li style = {{borderRight:(ind === "Update Password")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
                         
                     </ul>
                 </div>
@@ -45,7 +47,9 @@ const StudentDashboard = () => {
                     {(ind === "View Courses") ?
                         <ViewCourses /> : 
                         (ind === "Your Sections") ?
-                        <ViewStudentSections /> : <p></p>
+                        <ViewStudentSections /> :
+                        (ind === "Update Password") ?
+                        <ChangePassword /> : <p></p>
                     }
                 </div>
             </div>

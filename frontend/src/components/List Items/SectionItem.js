@@ -35,6 +35,13 @@ const SectionItem = (props) => {
             });
     }
 
+    const unerolSection = () => {
+        axios.post("http://localhost:3000/student/section/unenrol", {student_id: user.student_id, section_id: sectionID, course_id: courseID})
+            .then(res => {
+                navigate(0);
+            });
+    }
+
     return ( 
         <div className='section-item'>
             <div className="section-info">
@@ -49,7 +56,8 @@ const SectionItem = (props) => {
             <div className="section-btns">
                 <button className="btn btn-primary" onClick={() => navigate("/course/" + courseID + "/" + sectionID)}>View</button>
                 {user.professor_id === courseInfo.ic && <button className="btn btn-primary" onClick={deleteSection}>Delete</button>}
-                {displayRegister && user.role === "student" && <button className="btn btn-primary" onClick={registerSection} >Register</button>}
+                {displayRegister && user.role === "student" && <button className="btn btn-primary" onClick={registerSection} >Enrol</button>}
+                {!displayRegister && user.role === "student" && <button className="btn btn-danger" onClick={unerolSection}>Unenrol</button>}
             </div>
 
         </div>

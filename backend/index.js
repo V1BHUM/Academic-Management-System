@@ -304,5 +304,25 @@ app.post("/professor/delete", (req, res) => {
             });
         }
     });
-})
+});
 
+app.post("/student/section/unenrol", (req, res) => {
+    connection.execute("DELETE FROM STUDIES WHERE STUDENT_ID=? AND SECTION_ID=? AND COURSE_ID=?", [req.body.student_id, req.body.section_id, req.body.course_id], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/student/updatePassword", (req, res) => {
+    connection.execute("UPDATE STUDENT SET PASSWORD=? WHERE STUDENT_ID=?", [req.body.newPassword, req.body.student_id], (err, results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
+
+app.post("/professor/updatePassword", (req, res) => {
+    connection.execute("UPDATE PROFESSOR SET PASSWORD=? WHERE PROFESSOR_ID=?", [req.body.newPassword, req.body.professor_id], (err,results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
