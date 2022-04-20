@@ -29,7 +29,7 @@ const ViewStudent = () => {
             .then(res => {
                 setSections(res.data);
             });
-    },[]);
+    },[studentID]);
 
     return ( 
         <div className="view-student">

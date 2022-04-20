@@ -10,6 +10,7 @@ import StudentDashboard from './components/Dashboards/StudentDashboard';
 import ViewSection from './components/View Entities/ViewSection';
 import AddTopic from './components/Add Entities/AddTopic';
 import ViewStudent from './components/View Entities/ViewStudent';
+import ViewProfessor from './components/View Entities/ViewProfessor';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/admin" element={<AdminDash />}/>
             <Route path="/professor" element={<ProfessorDashboard />} />
+            <Route path="/professor/view/:professorID" element={<ViewProfessor />} />
             <Route path="/student" element={<StudentDashboard />} />
             <Route path="/student/view/:studentID" element={<ViewStudent />} />
             <Route path="/course/:courseID" element={<ViewCourse />} />

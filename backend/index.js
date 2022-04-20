@@ -144,7 +144,7 @@ app.post("/section/item", (req, res) => {
     });
 });
 
-app.post('/section/professor', (req, res) => {
+app.post('/professor/sections', (req, res) => {
     connection.execute("SELECT * FROM TEACHES WHERE PROFESSOR_ID=?",[req.body.professor_id], (err, results, fields) => {
         if(err) console.log(err);
         res.json(results);

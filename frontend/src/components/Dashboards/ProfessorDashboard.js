@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
+import AddMobileNumber from "../Add Entities/AddMobileNumber";
 import { UserContext } from "../contexts/UserContext";
 import ViewProfessorSections from "../List Items/ViewProfessorSections";
 import ChangePassword from "../Update Entities/ChangePassword";
@@ -39,6 +40,7 @@ const ProfessorDashboard = () => {
                         <li style = {{borderRight:(ind === "IC Courses")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>IC Courses</li>
                         <li style = {{borderRight:(ind === "Your Sections")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Your Sections</li>
                         <li style = {{borderRight:(ind === "Update Password")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
+                        <li style = {{borderRight:(ind === "Add Mobile Number")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Mobile Number</li>
                         
                     </ul>
                 </div>
@@ -49,7 +51,9 @@ const ProfessorDashboard = () => {
                         (ind === "Your Sections") ? 
                         <ViewProfessorSections /> :
                         (ind === "Update Password") ?
-                        <ChangePassword /> : <p></p>
+                        <ChangePassword /> :
+                        (ind === "Add Mobile Number") ?
+                        <AddMobileNumber /> : <p></p>
                     }
                 </div>
             </div>

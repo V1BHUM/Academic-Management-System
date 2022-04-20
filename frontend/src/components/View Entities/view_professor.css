@@ -1,0 +1,36 @@
+.view-professor{
+    display: flex;
+    padding:50px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
+    background-color: ghostwhite;
+}
+
+.view-professor .view-professor-ic-courses{
+    width: 95%;
+}
+
+.view-professor .view-professor-ic-courses .citem{
+    margin: 0 0 0 26.012px;
+    width: 96%;
+}
+
+.view-professor .view-professor-sections{
+    width: 95%;
+}
+
+.view-professor h2{
+    margin-left: 26.012px;
+}
+
+.view-professor h1{
+    margin: auto;
+}
+
+.view-professor .professor-info{
+    margin: auto;
+}

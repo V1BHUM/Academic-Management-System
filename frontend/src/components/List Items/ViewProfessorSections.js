@@ -11,7 +11,7 @@ const ViewProfessorSections = () => {
     useEffect(() => {
         if(loading)
         {
-            axios.post("http://localhost:3010/section/professor",{professor_id: user.professor_id})
+            axios.post("http://localhost:3010/professor/sections",{professor_id: user.professor_id})
                 .then(res => {
                     setSections(res.data);
                 });
