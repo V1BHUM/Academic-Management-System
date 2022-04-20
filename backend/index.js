@@ -26,21 +26,21 @@ app.listen(PORT,() => {
     console.log("Server running at port "+PORT);
 })
 
-app.post("/login/student",(req,res) =>{
+app.post("/student/get",(req,res) =>{
     connection.execute("SELECT * from student where student_id = ?",[req.body.username],(err,results,fields) => {
         if(err) console.log(err);
         res.json(results);
     });
 });
 
-app.post("/login/admin",(req,res) =>{
+app.post("/admin/get",(req,res) =>{
     connection.execute("SELECT * from admin where username = ?",[req.body.username],(err,results,fields) => {
         if(err) console.log(err);
         res.json(results);
     });
 });
 
-app.post("/login/professor",(req,res) =>{
+app.post("/professor/get",(req,res) =>{
     connection.execute("SELECT * from professor where professor_id = ?",[req.body.username],(err,results,fields) => {
         if(err) console.log(err);
         res.json(results);

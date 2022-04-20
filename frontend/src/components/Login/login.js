@@ -18,7 +18,7 @@ const Login = () => {
         r.preventDefault();
         if(Role === "Student")
         {
-            axios.post("http://localhost:3010/login/student",{username:username})
+            axios.post("http://localhost:3010/student/get",{username:username})
             .then(res => {
                 console.log(res);
                 if((res.data.length !== 0) && res.data[0].password === password)
@@ -35,7 +35,7 @@ const Login = () => {
 
         else if(Role === "Admin")
         {
-            axios.post("http://localhost:3010/login/admin",{username:username})
+            axios.post("http://localhost:3010/admin/get",{username:username})
             .then(res => {
                 console.log(res);
                 if((res.data.length !== 0) && res.data[0].password === password)
@@ -52,7 +52,7 @@ const Login = () => {
 
         else if(Role === "Professor")
         {
-            axios.post("http://localhost:3010/login/professor",{username:username})
+            axios.post("http://localhost:3010/professor/get",{username:username})
             .then(res => {
                 console.log(res);
                 if((res.data.length !== 0) && res.data[0].password === password)

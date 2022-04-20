@@ -16,7 +16,7 @@ const StudentItem = (props) => {
             <h4>{props.user.student_id}</h4>
             <h4>{props.user.first_name}</h4>
             <h4>{props.user.last_name}</h4>
-            <button className = 'view button btn btn-primary'>View</button>
+            <button className = 'view button btn btn-primary' onClick={_ => navigate("/student/view/" + props.user.student_id)}>View</button>
             <button className = 'delete button btn btn-primary' onClick={delStudent}>Delete</button>
             <br></br>
         </span>
