@@ -11,7 +11,7 @@ const StudentDashboard = () => {
 
 
     const [menu,setMenu] = useState(true);
-    const [ind,setInd] = useState("");
+    const [ind,setInd] = useState(sessionStorage.getItem("index"));
 
     return (
         <div className="student">

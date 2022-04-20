@@ -53,7 +53,7 @@ const ViewProfessor = () => {
                 })}
             </div>
 
-            <h2>Registered Sections</h2>
+            <h2>Teaching Sections</h2>
 
             <div className="view-professor-sections">
                 {sections.length > 0 ? sections.map(s =>{

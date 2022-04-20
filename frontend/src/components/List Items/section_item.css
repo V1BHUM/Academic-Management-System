@@ -5,12 +5,13 @@
     box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
     }
 .section-prof-list{
-    height: 60px;
+    height: 75px;
     overflow-y:auto;
     border-radius: 5px;
     background-color: white;
     box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
     padding: 0px 10px 0 10px;
+    width: 350px;
 }
 .section-item{
     display: flex;
@@ -20,12 +21,11 @@
     justify-content: center;
     padding: 15px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     background-color: azure;
     border-left: 10px solid rgb(58, 146, 247);
     overflow-x: auto;
     transition: 0.3s;
-
 }
 .section-item h3{
     margin-left: 50px;
@@ -40,4 +40,9 @@
 
 .section-btns .btn{
     margin:10px;
+}
+
+.section-item h5{
+    width: 350px;
+    margin-top: 30px;
 }

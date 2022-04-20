@@ -12,7 +12,7 @@ const ProfessorDashboard = () => {
     const {user, loading, logoutUser} = useContext(UserContext);
 
     const [menu,setMenu] = useState(true);
-    const [ind,setInd] = useState("");
+    const [ind,setInd] = useState(sessionStorage.getItem("index"));
 
     return ( 
         <div className="professor">
