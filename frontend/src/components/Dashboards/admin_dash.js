@@ -40,11 +40,11 @@ const AdminDash = () => {
                 }}>
 
                     <li style = {{borderRight:(ind === "View Students")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Students</li>
-                    <li style = {{borderRight:(ind === "View Courses")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Courses</li>
                     <li style = {{borderRight:(ind === "View Professors")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Professors</li>
+                    <li style = {{borderRight:(ind === "View Courses")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Courses</li>
                     <li style = {{borderRight:(ind === "Add Students")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Students</li>
                     <li style = {{borderRight:(ind === "Add Professors")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Professors</li>
-                    <li style = {{borderRight:(ind === "Add Course")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Course</li>
+                    <li style = {{borderRight:(ind === "Add Courses")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Courses</li>
                     
                 </ul>
             </div>
@@ -52,15 +52,15 @@ const AdminDash = () => {
             <div className="content">
                 {(ind === "View Students")?
                     <ViewStudents></ViewStudents>
-                :(ind === "View Courses")?
-                    <ViewCourses />
                 :(ind === "View Professors")?
-                    <ViewProfessors /> 
+                <ViewProfessors />
+                : (ind === "View Courses")?
+                <ViewCourses />
                 :(ind === "Add Students")?
                 <AddStudent />
                 :(ind === "Add Professors")?
                 <AddProfessor />
-                :(ind === "Add Course")?
+                :(ind === "Add Courses")?
                 <AddCourse /> : <p></p>
                 }
             </div>

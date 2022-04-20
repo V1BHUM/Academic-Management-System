@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router";
+import './add_topic_item.css';
 
 const AddTopicItem = (props) => {
     const {toggleFunction, topicID} = props;
@@ -36,8 +37,8 @@ const AddTopicItem = (props) => {
                     <input id="fileLink" className="form-control" placeholder="Enter link of attachment" onChange={e => setFileLink(e.target.value)} />
                 </div>
 
-                <button className="btn btn-primary" onClick={addTopicItem}>Add</button>
-                <button className="btn btn-danger" onClick={closeForm}>Close</button>
+                <button className="btn btn-primary" style = {{marginLeft:"20px",marginTop:"20px"}} onClick={addTopicItem}>Add</button>
+                <button className="btn btn-danger" style = {{marginLeft:"20px",marginTop:"20px"}}onClick={closeForm}>Close</button>
             </form>
         </div>
      );

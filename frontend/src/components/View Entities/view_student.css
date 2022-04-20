@@ -2,23 +2,37 @@
 {
     display: flex;
     padding:50px;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     margin: 25px;
     border-radius: 10px;
     box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
-    background-color: ghostwhite;
+    background-color: white;
 }
 
+
 .view-student h1{
-    margin: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-left: 50px;
 }
 
 .view-student .student-info{
-    margin: auto;
+    margin-right: auto;
+}
+
+.student-info p{
+    text-align: start;
+    margin-left: 55px;
 }
 
 .view-student .view-student-sections{
     width: 95%;
+}
+
+.view-student h4{
+    margin-right: auto;
+    margin-top: 40px;
+    margin-left: 50px;
 }

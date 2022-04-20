@@ -1,13 +1,13 @@
 .section{
     display: flex;
     padding:50px;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     margin: 25px;
     border-radius: 10px;
     box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
-    background-color: ghostwhite;
+    background-color: white;
 }
 
 .section .section-topics-heading{
@@ -15,6 +15,7 @@
     display: flex;
     width: 96%;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .section .section-topics{

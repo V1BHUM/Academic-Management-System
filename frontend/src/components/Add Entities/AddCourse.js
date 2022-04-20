@@ -31,7 +31,7 @@ const AddCourse = () => {
     const addCourse = () => {
         axios.post("http://localhost:3010/course/add",{ic: ic, course_id: courseID, course_name: courseName})
             .then(res => {
-
+                alert("New Course Added!!!");
             });
     }
 
@@ -52,7 +52,7 @@ const AddCourse = () => {
                     <input id="course-name" className="form-control" placeholder="Enter Course Name" onChange={e => setCourseName(e.target.value)} required/>
                 </div>
 
-                <div className="ic input-field"><label>IC : </label><SelectSearch options={selectSearchOptions} search filterOptions={fuzzySearch} value={ic} onChange={selectedValue => setIC(selectedValue)} />
+                <div className="ic input-field"><label>Instructor In Charge (IC) : </label><SelectSearch options={selectSearchOptions} search filterOptions={fuzzySearch} value={ic} onChange={selectedValue => setIC(selectedValue)} />
                 </div>
                 <button type="submit" className="add-btn btn btn-primary">Add Course</button>
             </form>

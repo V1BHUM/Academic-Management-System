@@ -78,7 +78,7 @@ const Login = () => {
             }}></input>
             <br></br>
             <label className='form-label' htmlFor='username'>Password</label>
-            <input type = "passowrd" id = "password" className='form-control' placeholder='Enter your password' required onChange={(e) => {
+            <input type = "password" id = "password" className='form-control' placeholder='Enter your password' required onChange={(e) => {
                 setPassword(e.target.value);
             }}></input>
             <br></br>

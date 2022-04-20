@@ -1,36 +1,75 @@
 .view-professor{
     display: flex;
     padding:50px;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     margin: 25px;
     border-radius: 10px;
     box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
-    background-color: ghostwhite;
+    background-color: white;
+} 
+
+.view-professor .citem:hover{
+    width: 98%;
 }
 
-.view-professor .view-professor-ic-courses{
-    width: 95%;
-}
-
-.view-professor .view-professor-ic-courses .citem{
-    margin: 0 0 0 26.012px;
+.view-professor .citem{
     width: 96%;
 }
 
-.view-professor .view-professor-sections{
-    width: 95%;
+.view-professor .labels{
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: 30px;
 }
 
-.view-professor h2{
-    margin-left: 26.012px;
+.view-professor .phoneno
+{
+    background-color: azure;
+    margin-top: 10px;
+    padding: 20px;
+    padding-bottom: 0px;
+    border-radius:15px;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.1 );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    position: absolute;
+    top:80px;
+    right: 100px;
+}
+
+.view-professor .phoneno li{
+    margin-right: 20px;
+}
+
+.view-professor ol{
+    overflow-y: auto;
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.view-professor p{
+    text-align: start;
+    margin-right: auto;
+    margin-left: 30px;
+    
+}
+
+.section-item p{
+    text-align: center;
 }
 
 .view-professor h1{
-    margin: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
-.view-professor .professor-info{
-    margin: auto;
-}

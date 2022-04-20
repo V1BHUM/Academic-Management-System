@@ -19,11 +19,10 @@ const TopicItem = (props) => {
 
     return (
         <div className="topic-item">
-            <div className="topic-item-content">
                 <p>{item.description}</p>
-                {item.file_link !== null && <a href={"http://" + item.file_link}>Attachment</a>}
-            </div>
-            {user.role !== "student" && <button className="btn btn-danger" onClick={deleteItem}>Delete Item</button>}
+                {item.file_link !== null && <a target = "_blank" href={((item.file_link.substr(0,4) === "http")?"":"http://") + item.file_link}>Attachment</a>}
+           
+            {user.role === "professor" && <button className="btn btn-danger" onClick={deleteItem}>Delete Item</button>}
         </div>
      );
 }

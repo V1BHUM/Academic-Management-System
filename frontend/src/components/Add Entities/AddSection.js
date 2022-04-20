@@ -66,31 +66,33 @@ const AddSection = () => {
     return ( 
         <div className="add-section" onSubmit={addSection}>
             <form className="add-section-form">
-                <h3>New Section Form</h3>
+                <h2>New Section Form</h2>
                 <div className="form-check">
+                    <div className="input-field">
                     <input id="is-root" className="form-check-input" type={"checkbox"} onChange={e => setRoot(e.target.checked)}/>
                     <label htmlFor="is-root" className="form-check-label">Root Section</label>
+                    </div>
                 </div>
 
                 {!isRoot &&
                     <div className="additional-options">
-                        <div className="input-dropdown">
-                            <div>
-                                <label htmlFor="section-type">Section Type :</label>
+                        <div className="input-field">
+
+                                <label htmlFor="section-type">Section Type :   </label>
                                 <SelectSearch options={typeOptions} id='section-type' value={type} onChange={selectedValue => setType(selectedValue)} /> 
-                            </div>
+
                         </div>
 
                         <div className="input-field">
                             <label htmlFor="number" className="form-label">Section Number :</label>
-                            <input id="number" className="form-control" placeholder="Enter Section's Number" onChange={e => setNumber(e.target.value)} />
+                            <input id="number" type = "text" className="form-control" placeholder="Enter Section's Number" onChange={e => setNumber(e.target.value)} />
                         </div>
 
-                        <div className="input-dropdown">
-                            <div>
-                                <label htmlFor="professor-list">Select Professors</label>
+                        <div className="input-field">
+
+                                <label htmlFor="professor-list">Select Professors :   </label>
                                 <SelectSearch options={professorListOptions} id='professor-list' search filterOptions={fuzzySearch} closeOnSelect={false} placeholder="Select the Professors"  multiple="true" printOptions="on-focus" value={profList} onChange={selectedValue => setProfList(selectedValue)} /> 
-                            </div>
+
                         </div>
                     </div>
                 }

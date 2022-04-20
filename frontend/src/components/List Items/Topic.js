@@ -40,8 +40,9 @@ const Topic = (props) => {
     return ( 
         <div className={(topicInfo.type) ?"topic-announcement topic" : "topic" }>
             <div className="topic-heading">
-                <h5>{topicInfo.heading} {user.role !== "student" && <button className="btn btn-danger" onClick={deleteTopic}>Delete Topic</button>}</h5>
-                {user.role !== "student" && !showItemForm && <button className="btn btn-primary" onClick={_ => setShowItemForm(true)}>Add Item</button>}
+                <h4>{topicInfo.heading} </h4>
+                {!showItemForm&&user.role === "professor" && <button className="btn btn-danger" onClick={deleteTopic}>Delete Topic</button>}
+                {user.role === "professor" && !showItemForm && <button className="btn btn-primary" onClick={_ => setShowItemForm(true)}>Add Item</button>}
                 {showItemForm && <AddTopicItem toggleFunction={setShowItemForm} topicID={topicInfo.topic_id} />}
             </div>
             <div className="topic-items">

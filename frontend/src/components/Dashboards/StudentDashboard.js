@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { UserContext } from "../contexts/UserContext";
 import ChangePassword from "../Update Entities/ChangePassword";
 import ViewCourses from "../View Entities/ViewCourses";
+import ViewProfessors from "../View Entities/ViewProfeessors";
 import ViewStudentSections from "../View Entities/ViewStudentSections";
 
 const StudentDashboard = () => {
@@ -38,6 +39,7 @@ const StudentDashboard = () => {
 
                         <li style = {{borderRight:(ind === "View Courses")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Courses</li>
                         <li style = {{borderRight:(ind === "Your Sections")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Your Sections</li>
+                        <li style = {{borderRight:(ind === "View Professors")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Professors</li>
                         <li style = {{borderRight:(ind === "Update Password")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
                         
                     </ul>
@@ -47,7 +49,9 @@ const StudentDashboard = () => {
                     {(ind === "View Courses") ?
                         <ViewCourses /> : 
                         (ind === "Your Sections") ?
-                        <ViewStudentSections /> :
+                        <ViewStudentSections /> 
+                        :(ind === "View Professors")?
+                    <   ViewProfessors /> :
                         (ind === "Update Password") ?
                         <ChangePassword /> : <p></p>
                     }

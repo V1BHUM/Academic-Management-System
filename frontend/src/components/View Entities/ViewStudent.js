@@ -43,7 +43,7 @@ const ViewStudent = () => {
                 <p>Batch: {studentBatch}</p>
             </div>
 
-            <h3>Registered Sections</h3>
+            <h4>Registered Sections</h4>
             
             <div className="view-student-sections">
                 {sections.length > 0?sections.map(s =>{

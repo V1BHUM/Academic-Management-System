@@ -170,6 +170,7 @@ app.post("/section/allInfo", (req, res) => {
     let info = {
         profList: [],
         courseName: "",
+        course_id:"",
         loading:false
     }
 
@@ -177,8 +178,9 @@ app.post("/section/allInfo", (req, res) => {
         if(err) console.log(err);
         info.profList = results;
 
-        connection.execute("SELECT course_name  FROM COURSE WHERE COURSE_ID=?",[req.body.course_id], (err1, results1, fields1) => {
+        connection.execute("SELECT course_id,course_name  FROM COURSE WHERE COURSE_ID=?",[req.body.course_id], (err1, results1, fields1) => {
             info.courseName = results1[0].course_name;
+            info.course_id = results1[0].course_id;
             if(err1) console.log(err1);
             res.json(info)
         });
@@ -325,4 +327,18 @@ app.post("/professor/updatePassword", (req, res) => {
         if(err) console.log(err);
         res.json(results);
     });
+});
+
+app.post("/professor/mobile/add",(req,res) => {
+    connection.execute("INSERT INTO PROF_MOBNO VALUES (?,?)",[req.body.professor_id,req.body.mobile_number], (err,results,fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    })
+});
+
+app.post("/professor/mobile",(req,res) => {
+    connection.execute("SELECT * FROM PROF_MOBNO WHERE USERNAME = ?",[req.body.professor_id], (err,results,fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    })
 });

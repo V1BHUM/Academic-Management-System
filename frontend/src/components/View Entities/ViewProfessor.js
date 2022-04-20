@@ -39,27 +39,32 @@ const ViewProfessor = () => {
         <div className="view-professor">
             <h1>{professorInfo.first_name} {professorInfo.last_name}</h1>
 
-            <div className="professor-info">
                 <p>First Name: {professorInfo.first_name}</p>
                 <p>Last Name: {professorInfo.last_name}</p>
                 <p>Professor ID: {professorInfo.professor_id}</p>
-            </div>
 
-            <h2>IC Courses</h2>
+            <div className="phoneno">
 
-            <div className="view-professor-ic-courses">
+            <h4> Phone no. </h4>
+            <ol>
+                {professorMobile.map((pm) => {
+                    return <li> {pm.mob_no}</li>
+                })}
+            </ol>
+        </div>
+
+            <h4 className="labels">IC Courses</h4>
+
                 {icCourses.map(c => {
                     return <CourseItem key={c.course_id} course={c} />
                 })}
-            </div>
 
-            <h2>Teaching Sections</h2>
+            <h4 className="labels">Teaching Sections</h4>
 
-            <div className="view-professor-sections">
                 {sections.length > 0 ? sections.map(s =>{
                     return <SectionItem key={s.course_id+s.section_id} courseID={s.course_id} sectionID={s.section_id} />
                 }):<p style={{margin:"auto"}}>nil</p>}
-            </div>
+        
         </div>
      );
 }

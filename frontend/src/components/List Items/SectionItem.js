@@ -45,7 +45,7 @@ const SectionItem = (props) => {
     return ( 
         <div className='section-item'>
             <div className="section-info">
-                <h3>{courseInfo.course_name} {sectionID}</h3>
+                <h3>{courseInfo.course_id} {courseInfo.course_name} {sectionID}</h3>
                 <h5>Professors:</h5>
                 <div className="section-prof-list">
                     {professors.map(p => {

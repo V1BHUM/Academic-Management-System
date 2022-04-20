@@ -13,14 +13,14 @@ const ChangePassword = () => {
         {
             axios.post("http://localhost:3010/student/updatePassword", {student_id: user.student_id, newPassword: newPassword})
                 .then(res => {
-                    
+                    alert("Password Changed Succesfully!!!");
                 });
         }
         else
         {
             axios.post("http://localhost:3010/professor/updatePassword", {professor_id: user.professor_id, newPassword: newPassword})
                 .then(res => {
-
+                    alert("Password Changed Succesfully!!!");
                 });
         }
     }

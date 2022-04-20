@@ -1,26 +1,28 @@
 .topic{
     display: flex;
     width: 96%;
-    align-items: flex-start;
+    align-items: center;
     box-shadow: 5px 5px 6px rgba(0,0,0,0.4);
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 15px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     background-color: azure;
     border-left: 10px solid rgb(58, 146, 247);
     overflow-x: auto;
     transition: 0.3s;
+    padding-bottom: 30px;
 }
 
 .topic-announcement{
-    background-color: red;
+    background-color: rgb(255, 79, 79);
 }
 
 .topic:hover{
     width: 98%;
     padding: 18px;
+    padding-bottom: 30px;
     background-color: rgb(244, 252, 252);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
 }
@@ -34,4 +36,12 @@
 
 .topic-items{
     width: 90%;
+}
+
+.topic .btn-danger{
+    margin-left: auto;
+}
+
+.section .topic .btn-primary{
+    margin-left: 20px;
 }

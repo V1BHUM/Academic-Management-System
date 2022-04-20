@@ -24,28 +24,29 @@ const ViewSection = () => {
 
             axios.post("http://localhost:3010/section/topics", {course_id: courseID, section_id: sectionID})
                 .then(res => {
-                    setTopics(res.data);
+                    setTopics(res.data.reverse());
+                    
                 });
     },[courseID,sectionID]);
 
     return ( 
         <div className="section">
             <div className="section-info">
-                <h2>{sectionInfo.courseName} {sectionID}</h2>
+                <h1>{sectionInfo.course_id} {sectionInfo.courseName} {sectionID}</h1>
                 <h3>Professors:</h3>
                 {!sectionInfo.loading && sectionInfo.profList.map(p => <p key={p.professor_id}>{p.first_name} {p.last_name}</p>)}
             </div>
             
             <div className="section-topics-heading">
                 <h3>Topics:</h3>
-                {user.role !== "student" && !showTopicForm && <button className="btn btn-primary" onClick={_ => setShowTopicForm(true)}>Add Topic</button>}
-                {showTopicForm && <AddTopic toggleFunction={setShowTopicForm} />}
+                {user.role === "professor" && !showTopicForm && <button className="btn btn-primary" onClick={_ => setShowTopicForm(true)}>Add Topic</button>}
+                
             </div>
-
+            {showTopicForm && <AddTopic toggleFunction={setShowTopicForm} />}
             <div className="section-topics">
                 
                 <div className="section-topic-items">
-                    {topics.map(t => {
+                    {(topics.length == 0)?<p style={{marginTop:"20px"}}>nil</p>:topics.map(t => {
                         return <Topic key={t.topic_id} topicID={t.topic_id} />
                     })}
                 </div>

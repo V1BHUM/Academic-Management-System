@@ -47,7 +47,7 @@ const AddTopic = (props) => {
                 </div>
 
                 <button type="submit" className="btn btn-primary">Add</button>
-                <button type="button" className="btn btn-danger" onClick={closeForm}>Close</button>
+                <button type="button" className="btn btn-danger" style={{marginLeft:"20px"}} onClick={closeForm}>Close</button>
             </form>
 
             

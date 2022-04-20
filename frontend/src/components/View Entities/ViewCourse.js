@@ -30,7 +30,7 @@ const ViewCourse = () => {
         <div className="course">
             <div className="course-details">
                 
-                <h3>{courseInfo.ic !== undefined && courseInfo.course_id} {courseInfo.ic !== undefined && courseInfo.course_name}</h3>
+                <h1>{courseInfo.ic !== undefined && courseInfo.course_id} {courseInfo.ic !== undefined && courseInfo.course_name}</h1>
                 <h4>IC: {courseInfo.ic !== undefined && (courseInfo.first_name + " " + courseInfo.last_name)}</h4>
                 
             </div>

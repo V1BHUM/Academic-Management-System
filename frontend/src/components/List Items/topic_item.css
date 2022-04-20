@@ -7,17 +7,12 @@
     justify-content: flex-start;
     padding: 15px;
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: white;
-    border-left: 10px solid rgb(39, 121, 214);
-    overflow-x: auto;
-    transition: 0.3s;
+    margin-top: 20px;
+    margin-bottom: 2s0px;
+    background-color: white;    
+    border-radius: 10px;
 }
 
-.topic-item:hover{
-    width: 98%;
-    padding: 18px;
-    background-color: rgb(244, 252, 252);
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+.topic-item a{
+    margin-bottom: 20px;
 }
