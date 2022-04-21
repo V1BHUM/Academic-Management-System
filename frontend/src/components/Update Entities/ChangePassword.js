@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useReducer, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 import './change_password.css';
 
@@ -16,11 +16,18 @@ const ChangePassword = () => {
                     alert("Password Changed Succesfully!!!");
                 });
         }
-        else
+        else if(user.role === "professor")
         {
             axios.post("http://localhost:3010/professor/updatePassword", {professor_id: user.professor_id, newPassword: newPassword})
                 .then(res => {
                     alert("Password Changed Succesfully!!!");
+                });
+        }
+        else
+        {
+            axios.post("http://localhost:3010/admin/updatePassword", {username: useReducer.username, newPassword: newPassword})
+                .then(res => {
+
                 });
         }
     }

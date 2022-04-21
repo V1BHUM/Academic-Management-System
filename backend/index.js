@@ -342,3 +342,10 @@ app.post("/professor/mobile",(req,res) => {
         res.json(results);
     })
 });
+
+app.post("/admin/updatePassword", (req, res) => {
+    connection.execute("UPDATE ADMIN SET PASSWORD=? WHERE USERNAME=?", [req.body.newPassword, req.body.username], (err,results, fields) => {
+        if(err) console.log(err);
+        res.json(results);
+    });
+});
