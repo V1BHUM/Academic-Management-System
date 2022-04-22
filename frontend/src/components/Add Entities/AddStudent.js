@@ -12,7 +12,7 @@ const AddStudent = () => {
     const addStudent = () => {
         axios.post("http://localhost:3010/student/add",{student_id: studentID, first_name: firstName, last_name: lastName, password: password })
             .then(res => {
-
+                alert("New Student Added");
             });
     }
 

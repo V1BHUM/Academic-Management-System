@@ -55,6 +55,7 @@ const AddSection = () => {
 
             axios.post("http://localhost:3010/course/section/add",{section_id: sectionID, course_id: courseID, profList: profList})
             .then(res => {
+                alert("New Section Added");
                 navigate(-1);
             });
         }

@@ -12,7 +12,7 @@ const AddProfessor = () => {
     const addProfessor = () => {
         axios.post("http://localhost:3010/professor/add",{professor_id: professorID, password: password, email: email, last_name: lastName, first_name: firstName})
             .then(res => {
-
+                alert("New Professor Added");
             });
     }
 
