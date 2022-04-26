@@ -40,13 +40,13 @@ const AdminDash = () => {
                     sessionStorage.setItem("index",e.target.innerHTML);
                 }}>
 
-                    <li style = {{borderRight:(ind === "View Students")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Students</li>
-                    <li style = {{borderRight:(ind === "View Professors")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Professors</li>
-                    <li style = {{borderRight:(ind === "View Courses")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Courses</li>
-                    <li style = {{borderRight:(ind === "Add Students")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Students</li>
-                    <li style = {{borderRight:(ind === "Add Professors")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Professors</li>
-                    <li style = {{borderRight:(ind === "Add Courses")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Courses</li>
-                    <li style = {{borderRight:(ind === "Update Password")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
+                    <li style = {{borderRight:(ind === "View Students")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>View Students</li>
+                    <li style = {{borderRight:(ind === "View Professors")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>View Professors</li>
+                    <li style = {{borderRight:(ind === "View Courses")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>View Courses</li>
+                    <li style = {{borderRight:(ind === "Add Students")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Students</li>
+                    <li style = {{borderRight:(ind === "Add Professors")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Professors</li>
+                    <li style = {{borderRight:(ind === "Add Courses")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Courses</li>
+                    <li style = {{borderRight:(ind === "Update Password")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
                     
                 </ul>
             </div>

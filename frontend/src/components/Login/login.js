@@ -68,7 +68,8 @@ const Login = () => {
         }
     }
     return ( 
-        <div className = "login_main_div">
+        <div className='div_main_enc'>
+            <div className = "login_main_div">
             <h1> Login </h1>
             <form className = "login_form" onSubmit = {handleSubmit}>
             <p className='warn' style = {{visibility:(prob?"visible":"hidden")}}>Incorrect username or password</p>
@@ -102,6 +103,7 @@ const Login = () => {
                  
             <button className='button btn btn-primary' type = 'submit'>Sign in</button>
             </form>
+            </div>
         </div>
      );
 }

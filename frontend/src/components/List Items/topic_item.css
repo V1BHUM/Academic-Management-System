@@ -8,13 +8,12 @@
     padding: 15px;
     margin: auto;
     margin-top: 20px;
-    margin-bottom: 2s0px;
-    background-color: #54A7DF;
-    background-image: linear-gradient(135deg, #035AA6, #54A7DF);
+    margin-bottom: 20px;
+    background-color: ghostwhite;
+    color: black;
     border-radius: 10px;
 }
 
 .topic-item a{
     margin-bottom: 20px;
-    color: rgb(203, 203, 250);
 }

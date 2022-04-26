@@ -5,6 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 import ViewProfessorSections from "../List Items/ViewProfessorSections";
 import ChangePassword from "../Update Entities/ChangePassword";
 import ViewICCourses from "../View Entities/ViewICCourses";
+import ViewStudents from "../View Entities/view_students";
 import './admin_dash.css';
 
 const ProfessorDashboard = () => {
@@ -37,16 +38,19 @@ const ProfessorDashboard = () => {
                         sessionStorage.setItem("index",e.target.innerHTML);
                     }}>
 
-                        <li style = {{borderRight:(ind === "IC Courses")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>IC Courses</li>
-                        <li style = {{borderRight:(ind === "Your Sections")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Your Sections</li>
-                        <li style = {{borderRight:(ind === "Update Password")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
-                        <li style = {{borderRight:(ind === "Add Mobile Number")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Mobile Number</li>
+                        <li style = {{borderRight:(ind === "IC Courses")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>IC Courses</li>
+                        <li style = {{borderRight:(ind === "Your Sections")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>Your Sections</li>
+                        <li style = {{borderRight:(ind === "View Students")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>View Students</li>
+                        <li style = {{borderRight:(ind === "Update Password")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
+                        <li style = {{borderRight:(ind === "Add Mobile Number")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Mobile Number</li>
                         
                     </ul>
                 </div>
 
                 <div className="content">
-                    {(ind === "IC Courses")? 
+                    {(ind === "View Students")?
+                    <ViewStudents></ViewStudents>
+                :(ind === "IC Courses")? 
                         <ViewICCourses /> : 
                         (ind === "Your Sections") ? 
                         <ViewProfessorSections /> :

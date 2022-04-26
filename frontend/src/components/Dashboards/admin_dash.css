@@ -1,7 +1,6 @@
 .header{
     display: flex;
-    background-color: #023373;
-    background-image: linear-gradient(90deg, #023373, #4895D9);
+    background-color: #161b22;
     align-items: center;    
     padding-left: 20px;
     border-bottom: 9px solid rgba(0,0,0,0.15);
@@ -21,8 +20,7 @@
 }
 
 .navbar{
-    background-color:#035AA6;
-    background-image: linear-gradient(180deg, #023373, #4895D9);
+    background-color: #115ed1;
     color: white;
     display: flex;
     align-items:baseline;
@@ -32,9 +30,6 @@
 }
 
 .content{
-    background-color:#52A5D9;
-    background-image: url('../../../public/BackgroundImages/5506731.jpg');
-    background-size: 100%;
     flex-grow: 1;
     height: calc(100vh - 80px);
     overflow: auto;
@@ -46,6 +41,7 @@
     margin-left: 40px;
     font-family: sans-serif;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .menu:hover{
@@ -70,7 +66,8 @@
 }
 
 .navbar li:hover{
-    background-color: rgba(0,0,0,0.1);
+    background-image:linear-gradient(90deg,#115ed1,#0583F2);
+    border-right: none;
     transition: 0.5s;
 }
 
@@ -80,5 +77,6 @@
     font-size: larger;
     width: 220px;
     box-sizing: content-box;
+    border-bottom: 1px solid rgba(7, 56, 97, 0.623);
 }
 

@@ -37,7 +37,7 @@ const AddTopic = (props) => {
 
                 <div className="input-dropdown">
 
-                    <label htmlFor="topic-type">Section Type :</label>
+                    <label htmlFor="topic-type">Section Type</label>
                     <SelectSearch options={typeOptions} value={type} onChange={setType} />
                 </div>
 

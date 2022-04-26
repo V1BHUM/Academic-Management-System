@@ -1,16 +1,26 @@
+.div_main_enc{
+    padding-top: 30px;
+}
+
+.login_main_div:hover{
+    width: 610px;
+    height: 510px;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
+}
+
 .login_main_div{
     margin: auto;
-    margin-top: 30px;
     padding:50px;
     padding-bottom: 80px;
     
     width: 600px;
+    height: 500px;
     border-radius: 10px;
     color: white;
-
-    background-color: #023373;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.18);
     background-image: url('../../../public/BackgroundImages/main-background.jpg');
     background-size: cover;
+    transition: 0.1s;
 }
 
 .warn{
@@ -30,8 +40,8 @@ label
 }
 
 .drop-btn{
-    background-color: #4895D9;
-    border-color: #4895D9;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
 }
 
 .drop-btn:hover{

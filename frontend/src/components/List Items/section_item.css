@@ -23,9 +23,8 @@
     padding: 15px;
     margin: auto;
     margin-top: 20px;
-    background-color: #54A7DF;
-    background-image: linear-gradient(135deg, #035AA6, #54A7DF);
-    border-left: 10px solid #023373;
+    background-image: linear-gradient(135deg, #055ada ,#5e9eff);
+    border-left: 10px solid #032c61;
     overflow-x: auto;
     transition: 0.3s;
     color: white;

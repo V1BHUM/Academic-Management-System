@@ -43,7 +43,7 @@ const ViewProfessors = () => {
     }
 
     return ( 
-        <div className="professors">
+        <div className="professors" style={{marginBottom:"40px"}}>
             <div className="search-field" style={{margin:"30px auto 50px auto", display: "flex", alignItems: "center", justifyContent: "center"}}>
                 <input className="form-control" style={{width: "30%", marginRight:"30px"}} placeholder="Search Students" onChange={e => setQuery(e.target.value)}/>
                 <button className="btn btn-primary" onClick={searchProfessors}>Search</button>

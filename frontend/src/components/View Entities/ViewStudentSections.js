@@ -19,7 +19,7 @@ const ViewStudentSections = () => {
     },[loading, user.student_id]);
 
     return ( 
-        <div className="view-student-sections">
+        <div className="view-student-sections" style={{marginBottom:"40px"}}>
             {sections.map(s => {
                 return <SectionItem key={s.course_id+s.section_id} courseID={s.course_id} sectionID={s.section_id} displayRegister={false} />
             })}

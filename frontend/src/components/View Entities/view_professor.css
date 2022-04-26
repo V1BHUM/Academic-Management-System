@@ -8,6 +8,8 @@
     border-radius: 10px;
     box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
     background-color: white;
+    background-image: url("../../../public/BackgroundImages/white-hex.png");
+    background-size:100%;
 } 
 
 .view-professor .citem:hover{
@@ -26,30 +28,34 @@
 
 .view-professor .phoneno
 {
-    background-color: azure;
+    background-color: #0d6efd;
     margin-top: 10px;
     padding: 20px;
     padding-bottom: 0px;
-    border-radius:15px;
     box-shadow: 0 0 10px 10px rgba(0,0,0,0.1 );
     display: flex;
+    border-left: 10px solid #032c61;
+    border-radius: 15px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-left: auto;
     position: absolute;
-    top:80px;
+    top:50px;
     right: 100px;
+    color: white;
 }
 
 .view-professor .phoneno li{
     margin-right: 20px;
+    color: black;
+    padding-right: 20px;
 }
 
 .view-professor ol{
     overflow-y: auto;
     height: 150px;
-    width: 150px;
+    width: 170px;
     background-color: white;
     border-radius: 15px;
     padding-top: 10px;

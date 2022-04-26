@@ -1,3 +1,14 @@
+html {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0px;
+  min-height: 100%;
+  width: 100%;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,8 +16,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('../public/BackgroundImages/2195679.jpg');
-  background-size: cover;
+  background:url("../public/BackgroundImages/white_bg.jpg");
+  backdrop-filter:blur(4px);
 }
 
 code {
