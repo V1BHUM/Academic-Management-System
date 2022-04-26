@@ -3,9 +3,14 @@
     margin-top: 30px;
     padding:50px;
     padding-bottom: 80px;
-    background-color: aquamarine;
+    
     width: 600px;
     border-radius: 10px;
+    color: white;
+
+    background-color: #023373;
+    background-image: url('../../../public/BackgroundImages/main-background.jpg');
+    background-size: cover;
 }
 
 .warn{
@@ -22,4 +27,14 @@ label
     float: right;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.drop-btn{
+    background-color: #4895D9;
+    border-color: #4895D9;
+}
+
+.drop-btn:hover{
+    background-color: #035AA6;
+    border-color: #035AA6;
 }

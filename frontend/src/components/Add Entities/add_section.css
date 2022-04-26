@@ -1,13 +1,15 @@
 .add-section{
 
     padding: 50px;
-    background-color: white;
+    background-color: #54A7DF;
+    background-image: linear-gradient(135deg, #035AA6, #54A7DF);
     border-radius: 10px;
     box-shadow : 0 0 10px 10px rgba(0,0,0,0.1);
     width: 60%;
     margin: auto;
     margin-top:50px;
     margin-bottom: 50px;
+    color: white;
 }
 
 .add-section .input-field{

@@ -12,6 +12,7 @@
     box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
     padding: 0px 10px 0 10px;
     width: 350px;
+    color: black;
 }
 .section-item{
     display: flex;
@@ -22,10 +23,12 @@
     padding: 15px;
     margin: auto;
     margin-top: 20px;
-    background-color: azure;
-    border-left: 10px solid rgb(58, 146, 247);
+    background-color: #54A7DF;
+    background-image: linear-gradient(135deg, #035AA6, #54A7DF);
+    border-left: 10px solid #023373;
     overflow-x: auto;
     transition: 0.3s;
+    color: white;
 }
 .section-item h3{
     margin-left: 50px;

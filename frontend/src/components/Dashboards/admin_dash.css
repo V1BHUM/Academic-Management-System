@@ -1,12 +1,14 @@
 .header{
     display: flex;
-    background-color: aquamarine;
+    background-color: #023373;
+    background-image: linear-gradient(90deg, #023373, #4895D9);
     align-items: center;    
     padding-left: 20px;
     border-bottom: 9px solid rgba(0,0,0,0.15);
+    color: white;
 }
 
-.header button{
+.header .button{
     margin-left: auto;
     margin-right: 20px;
     margin: 12px;
@@ -19,7 +21,9 @@
 }
 
 .navbar{
-    background-color:floralwhite;
+    background-color:#035AA6;
+    background-image: linear-gradient(180deg, #023373, #4895D9);
+    color: white;
     display: flex;
     align-items:baseline;
     height: calc(100vh - 80px);
@@ -28,7 +32,9 @@
 }
 
 .content{
-    background-color:rgb(204, 201, 201);
+    background-color:#52A5D9;
+    background-image: url('../../../public/BackgroundImages/5506731.jpg');
+    background-size: 100%;
     flex-grow: 1;
     height: calc(100vh - 80px);
     overflow: auto;
@@ -51,6 +57,7 @@
     border: none;
     border-radius: 20px;
     background-image: url("../../../public/menu.png");
+    filter: brightness(0) invert(1);
     background-position: center;
     background-size: contain;
     height: 40px;
