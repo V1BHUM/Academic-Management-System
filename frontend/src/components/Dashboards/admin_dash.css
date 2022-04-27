@@ -26,7 +26,7 @@
     align-items:baseline;
     height: calc(100vh - 80px);
     justify-content: center;
-    border-left: 9px solid rgba(0,0,0,0.2);
+    border-left: 4px solid rgba(0,0,0,0.2);
 }
 
 .content{
@@ -77,6 +77,6 @@
     font-size: larger;
     width: 220px;
     box-sizing: content-box;
-    border-bottom: 1px solid rgba(7, 56, 97, 0.623);
+    border-bottom: 1.5px solid rgba(10, 39, 65, 0.823);
 }
 

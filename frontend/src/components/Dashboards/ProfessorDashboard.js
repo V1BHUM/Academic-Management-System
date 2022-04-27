@@ -38,11 +38,11 @@ const ProfessorDashboard = () => {
                         sessionStorage.setItem("index",e.target.innerHTML);
                     }}>
 
-                        <li style = {{borderRight:(ind === "IC Courses")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>IC Courses</li>
-                        <li style = {{borderRight:(ind === "Your Sections")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>Your Sections</li>
-                        <li style = {{borderRight:(ind === "View Students")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>View Students</li>
-                        <li style = {{borderRight:(ind === "Update Password")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
-                        <li style = {{borderRight:(ind === "Add Mobile Number")?"5px solid rgba(255,255,255,0.5)":"5px solid rgba(0,0,0,0)"}}>Add Mobile Number</li>
+                        <li style = {{borderLeft:(ind === "IC Courses")?"5px solid rgba(255,255,255,0.9)":"5px solid rgba(0,0,0,0)"}}>IC Courses</li>
+                        <li style = {{borderLeft:(ind === "Your Sections")?"5px solid rgba(255,255,255,0.9)":"5px solid rgba(0,0,0,0)"}}>Your Sections</li>
+                        <li style = {{borderLeft:(ind === "View Students")?"5px solid rgba(255,255,255,0.9)":"5px solid rgba(0,0,0,0)"}}>View Students</li>
+                        <li style = {{borderLeft:(ind === "Update Password")?"5px solid rgba(255,255,255,0.9)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
+                        <li style = {{borderLeft:(ind === "Add Mobile Number")?"5px solid rgba(255,255,255,0.9)":"5px solid rgba(0,0,0,0)"}}>Add Mobile Number</li>
                         
                     </ul>
                 </div>

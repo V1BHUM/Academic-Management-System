@@ -37,10 +37,10 @@ const StudentDashboard = () => {
                         sessionStorage.setItem("index",e.target.innerHTML);
                     }}>
 
-                        <li style = {{borderRight:(ind === "View Courses")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Courses</li>
-                        <li style = {{borderRight:(ind === "Your Sections")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Your Sections</li>
-                        <li style = {{borderRight:(ind === "View Professors")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>View Professors</li>
-                        <li style = {{borderRight:(ind === "Update Password")?"5px solid rgba(0,0,0,0.5)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
+                        <li style = {{borderLeft:(ind === "View Courses")?"5px solid rgba(255,255,255,0.9)":"5px solid rgba(0,0,0,0)"}}>View Courses</li>
+                        <li style = {{borderLeft:(ind === "Your Sections")?"5px solid rgba(255,255,255,0.9)":"5px solid rgba(0,0,0,0)"}}>Your Sections</li>
+                        <li style = {{borderLeft:(ind === "View Professors")?"5px solid rgba(255,255,255,0.9)":"5px solid rgba(0,0,0,0)"}}>View Professors</li>
+                        <li style = {{borderLeft:(ind === "Update Password")?"5px solid rgba(255,255,255,0.9)":"5px solid rgba(0,0,0,0)"}}>Update Password</li>
                         
                     </ul>
                 </div>
