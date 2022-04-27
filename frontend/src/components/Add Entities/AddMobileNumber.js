@@ -11,7 +11,7 @@ const AddMobileNumber = () => {
     const addMobileNumber = () => {
         axios.post("http://localhost:3010/professor/mobile/add", {professor_id: user.professor_id, mobile_number: mobileNumber})
             .then(res => {
-                alert("New Mobile Number Added");
+                // alert("New Mobile Number Added");
             })
     }
 
